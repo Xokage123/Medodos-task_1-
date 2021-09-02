@@ -1,0 +1,33 @@
+{
+    "name": "medodos-task_1-",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "parcel index.html",
+        "build": "parcel build index.html"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Xokage123/Medodos-task_1-.git"
+    },
+    "author": "Maksim Artemov",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Xokage123/Medodos-task_1-/issues"
+    },
+    "homepage": "https://github.com/Xokage123/Medodos-task_1-#readme",
+    "dependencies": {
+        "vue": "^2.6.14",
+        "vue-hot-reload-api": "^2.3.4",
+        "vuelidate": "^0.7.6"
+    },
+    "devDependencies": {
+        "@vue/component-compiler-utils": "^3.2.2",
+        "node-sass": "^6.0.1",
+        "parcel-bundler": "^1.12.5",
+        "sass": "^1.39.0",
+        "sass-loader": "^12.1.0",
+        "vue-template-compiler": "^2.6.14"
+    }
+}
