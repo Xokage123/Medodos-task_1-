@@ -85,15 +85,24 @@ export default {
       if (!valid.$invalid) {
       }
       const modal = document.querySelector(".modal");
-        const overlay = document.querySelector(".overlay");
-        modal.innerHTML = valid.$invalid ? 'Вы не заполнели все обязательные поля' : 'Клиент успешно создан';
-        modal.innerHTML +=  this.dispatch ? ' ( данные будут отправлены )' : ' ( данные отправлены не будут )';
-        modal.classList.add("active" , valid.$invalid ? 'error' : 'good');
-        overlay.classList.add("active");
-        setTimeout(() => {
-          modal.classList.remove("active");
-          overlay.classList.remove("active");
-        }, 2000);
+      const overlay = document.querySelector(".overlay");
+      modal.innerHTML = valid.$invalid
+        ? "Вы не заполнели все обязательные поля"
+        : "Клиент успешно создан";
+      modal.innerHTML += this.dispatch
+        ? " ( данные будут отправлены )"
+        : " ( данные отправлены не будут )";
+      modal.classList.add("active", valid.$invalid ? "error" : "good");
+      overlay.classList.add("active");
+      setTimeout(() => {
+        for (let element in this.$v) {
+          if (!element.startsWith("$")) {
+            this.$v[element].$model = "";
+          }
+        }
+        modal.classList.remove("active");
+        overlay.classList.remove("active");
+      }, 2000);
     },
     setName(value) {
       this.name = checkValue(value, "text");
