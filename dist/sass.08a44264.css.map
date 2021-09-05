@@ -1,1 +1,0 @@
-{"version":3,"sources":["src\\styles\\sass\\index.scss"],"names":[],"mappings":"AAAA,IAAI,CAAC;EACD,KAAK,EAAE,GAAG,GACb","file":"sass.08a44264.css","sourceRoot":"..","sourcesContent":["body {\r\n    color: red;\r\n}"]}

@@ -2,135 +2,93 @@
   <fieldset class="form-section form-section--private">
     <legend class="form-section__title">Личная информация</legend>
     <!-- Фамилия -->
-    <div class="form-group">
-      <label
-        class="form-label"
-        :class="{
-          success: !validate.surname.$invalid,
-          error: validate.surname.$invalid,
-        }"
-      >
-        Фамилия*
-        <input
-          name="surname"
-          class="form-input"
-          placeholder="Введите фамилию"
-          :class="{
-            'form-input--error': validate.surname.$error,
-            'form-input--sucess': !validate.surname.$invalid,
-          }"
-          v-model.trim="validate.surname.$model"
-          @input="setSurname($event.target.value)"
-        />
-      </label>
-      <small class="form-small error" v-if="!validate.surname.required">
-        Поле обязательно для заполнения
-      </small>
-      <small class="form-small error" v-else-if="!validate.surname.minLength">
-        Минимальное количество символом в этом поле
-        {{ validate.surname.$params.minLength.min }}.
-      </small>
-      <small class="form-small success" v-else> Поле заполненно успешно</small>
-    </div>
+    <Group
+      @update-surname="setSurname"
+      :validate="validate.surname"
+      :info="surnameInfo"
+      :nameElement="'surname'"
+    ></Group>
     <!-- Имя -->
-    <div class="form-group">
-      <label
-        class="form-label"
-        :class="{
-          success: !validate.name.$invalid,
-          error: validate.name.$invalid,
-        }"
-      >
-        Имя*
-        <input
-          name="name"
-          class="form-input"
-          placeholder="Введите имя"
-          :class="{
-            'form-input--error': validate.name.$error,
-            'form-input--sucess': !validate.name.$invalid,
-          }"
-          v-model.trim="validate.name.$model"
-          @input="setName($event.target.value)"
-        />
-      </label>
-      <small class="form-small error" v-if="!validate.name.required">
-        Поле обязательно для заполнения
-      </small>
-      <small class="form-small error" v-else-if="!validate.name.minLength">
-        Минимальное количество символом в этом поле
-        {{ validate.name.$params.minLength.min }}.
-      </small>
-      <small class="form-small success" v-else> Поле заполненно успешно</small>
-    </div>
+    <Group
+      @update-name="setName"
+      :validate="validate.name"
+      :info="nameInfo"
+      :nameElement="'name'"
+    ></Group>
     <!-- Отчество -->
-    <div class="form-group">
-      <label
-        class="form-label"
-        :class="{
-          success: !validate.lastname.$invalid,
-          error: validate.lastname.$invalid,
-        }"
-      >
-        Отчество
-        <input
-          name="lastname"
-          class="form-input"
-          placeholder="Введите Отчество"
-          :class="{
-            'form-input--error': validate.lastname.$error,
-            'form-input--sucess': !validate.lastname.$invalid,
-          }"
-          v-model.trim="validate.lastname.$model"
-          @input="setLastname($event.target.value)"
-        />
-      </label>
-      <small class="form-small error" v-if="!validate.lastname.minLength">
-        Минимальное количество символом в этом поле
-        {{ validate.name.$params.minLength.min }}.
-      </small>
-      <small
-        class="form-small success"
-        v-else-if="validate.lastname.$model.length > 0"
-      >
-        Поле заполненно успешно</small
-      >
-    </div>
+    <Group
+      @update-lastname="setLastname"
+      :validate="validate.lastname"
+      :info="lastnameInfo"
+      :nameElement="'lastname'"
+    ></Group>
     <!-- Дата рождения-->
-    <div class="form-group">
-      <label
-        class="form-label"
-        :class="{
-          success: !validate.birth.$invalid,
-          error: validate.birth.$invalid,
-        }"
-      >
-        Дата рождения*
-        <input
-          type="date"
-          name="birth"
-          class="form-input"
-          placeholder="Введите дату рождения"
-          :class="{
-            'form-input--error': validate.birth.$error,
-            'form-input--sucess': !validate.birth.$invalid,
-          }"
-          v-model.trim="validate.birth.$model"
-          @input="setBirth($event.target.value)"
-        />
-      </label>
-      <small class="form-small error" v-if="!validate.birth.required">
-        Поле обязательно для заполнения
-      </small>
-      <small class="form-small success" v-else> Поле заполненно успешно</small>
-    </div>
+    <Group
+      @update-birth="setBirth"
+      :validate="validate.birth"
+      :info="birthInfo"
+      :nameElement="'birth'"
+    ></Group>
+    <!--Телефон -->
+    <Group
+      @update-phone="setPhone"
+      :validate="validate.phone"
+      :info="phoneInfo"
+      :nameElement="'phone'"
+    ></Group>
+    <!--Пол -->
+    <Group
+      @update-gender="setGender"
+      :validate="validate.gender"
+      :info="genderInfo"
+      :nameElement="'gender'"
+    ></Group>
+    <!--Клиенты -->
+    <Group
+      @update-clients="setClients"
+      :validate="validate.clients"
+      :info="clientsInfo"
+      :nameElement="'clients'"
+    ></Group>
+    <!--Доктор -->
+    <Group
+      @update-doctor="setDoctor"
+      :validate="validate.doctor"
+      :info="doctorInfo"
+      :nameElement="'doctor'"
+    ></Group>
+    <!--Отправлять ли данные на сервер -->
+    <label class="form__label-checkbox">
+      Не отправлять
+      <input @input="setDispatch" type="checkbox" />
+      <div></div>
+    </label>
   </fieldset>
 </template>
 
+
 <script>
+import Group from "../../Group.vue";
+import { INFO } from "../../../data/index.js";
+
 export default {
   name: "Private",
   props: ["validate"],
+  components: {
+    Group,
+  },
+  data() {
+    return {
+      nameInfo: INFO.name,
+      surnameInfo: INFO.surname,
+      lastnameInfo: INFO.lastname,
+      birthInfo: INFO.birth,
+      phoneInfo: INFO.phone,
+      genderInfo: INFO.gender,
+      clientsInfo: INFO.clients,
+      doctorInfo: INFO.doctor,
+    };
+  },
   methods: {
     setName(value) {
       this.$emit("update-value-name", value);
@@ -141,9 +99,23 @@ export default {
     setLastname(value) {
       this.$emit("update-value-lastname", value);
     },
-    setBirth(value) {
-      console.log(new Date(value));
+    setBirth() {
       this.$emit("update-value-birth");
+    },
+    setPhone(value) {
+      this.$emit("update-value-phone", value);
+    },
+    setGender() {
+      this.$emit("update-value-gender");
+    },
+    setClients() {
+      this.$emit("update-value-clients");
+    },
+    setDoctor() {
+      this.$emit("update-value-doctor");
+    },
+    setDispatch(ev) {
+      this.$emit("update-value-dispatch", ev.target.checked);
     },
   },
 };

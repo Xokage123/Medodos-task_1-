@@ -1,41 +1,47 @@
-import { required, minLength, between } from "vuelidate/lib/validators";
-
-// Vue
-export const Vue__validationObjectPrivate = {
-    // Имя
-    name: {
-        required,
-        minLength: minLength(4)
-    },
-    // Фамилия
-    surname: {
-        required,
-        minLength: minLength(4),
-    },
-    // Отчество
-    lastname: {
-        minLength: minLength(4),
-    },
-    birth: {
-        required
-    }
-}
-
-// JS
+import { MIN } from "../data/index.js"
 
 export const checkValue = (value, nameElement) => {
+    let checkValue = '';
     let regXP;
     switch (nameElement) {
-        case 'name':
-        case 'surname':
-        case 'lastname':
+        case 'text':
             regXP = /\W/i;
+            break;
+        case 'phone':
+        case 'index':
+        case 'house':
+        case 'pasport-series':
+        case 'pasport-number':
+            regXP = /\d/i
+            break;
+        default:
+            return null;
     }
-    let checkValue = '';
     for (let i = 0; i < value.length; i++) {
-        if (regXP.test(value[i])) {
-            checkValue += value[i]
+        if (i == 0 && nameElement === 'phone') {
+            checkValue += "+"
         }
+        if (regXP.test(value[i]) && nameElement != 'date') {
+            switch (nameElement) {
+                case 'phone':
+                case 'index':
+                case 'house':
+                    if (i < MIN[nameElement]) checkValue += value[i];
+                    break;
+                case 'pasport-series':
+                    if (i < MIN.pasport.series) checkValue += value[i];
+                    break;
+                case 'pasport-number':
+                    if (i < MIN.pasport.number) checkValue += value[i];
+                    break;
+                default:
+                    checkValue += value[i]
+            }
+        }
+    }
+    // Нельзя удалить первую цифру
+    if (value.length == 1 && nameElement === 'phone') {
+        checkValue = '+7';
     }
     return checkValue;
 }
