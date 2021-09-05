@@ -20,12 +20,15 @@
     "dependencies": {
         "vue": "^2.6.14",
         "vue-hot-reload-api": "^2.3.4",
+        "vue-multiselect": "^2.1.6",
         "vuelidate": "^0.7.6"
     },
     "devDependencies": {
         "@vue/component-compiler-utils": "^3.2.2",
         "node-sass": "^6.0.1",
         "parcel-bundler": "^1.12.5",
+        "pug": "^3.0.2",
+        "pug-loader": "^2.4.0",
         "sass": "^1.39.0",
         "sass-loader": "^12.1.0",
         "vue-template-compiler": "^2.6.14"

@@ -2,7 +2,8 @@
 * {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  outline: none; }
 
 body,
 html,
@@ -10,6 +11,9 @@ fieldset {
   margin: 0;
   padding: 0;
   border: none; }
+
+body {
+  background-color: rgba(255, 238, 238, 0.4); }
 
 .visually-hidden {
   position: absolute !important;
@@ -75,6 +79,13 @@ h6 {
   padding: 10px;
   background-color: #5FC0CE;
   border-radius: 5px; }
+  .form__label {
+    font-size: 16px; }
+    .form__label-radio {
+      display: flex; }
+    .form__label-checkbox {
+      display: flex;
+      font-size: 12px; }
   .form__title {
     text-align: center;
     margin-bottom: 10px; }
@@ -85,14 +96,91 @@ h6 {
       font-style: italic; }
   .form-group {
     padding-top: 10px; }
-  .form-input {
+  .form-input:not([type='radio']) {
     display: block;
+    width: 400px;
     padding: 10px;
     margin: 5px 0;
     border: 2px solid #b49797;
-    border-radius: 10px; }
-    .form-input--sucess {
+    border-radius: 10px;
+    cursor: pointer; }
+    .form-input:not([type='radio'])--sucess {
       border: 2px solid green; }
   .form-small {
     padding-bottom: 10px; }
+  .form__submit {
+    padding: 10px;
+    background-color: #f9ffa4;
+    border: 2px solid #ffb663;
+    border-radius: 25px; }
+    .form__submit:hover {
+      transform: scale(1.1);
+      background-color: #f8f537; }
+    .form__submit:focus {
+      background-color: #bebe96; }
+    .form__submit:active {
+      background-color: #a8a800; }
+
+.multiselect__tag, .multiselect__single {
+  padding: 5px;
+  margin-right: 5px;
+  border-radius: 15px; }
+
+.multiselect__content {
+  padding: 0;
+  margin: 10px 0 0 0; }
+
+.multiselect__element {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 2px solid #b49797; }
+  .multiselect__element:hover {
+    color: red;
+    border-bottom: 2px solid red; }
+
+.main {
+  padding: 30px 0; }
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  max-width: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  box-shadow: 0 3px 10px -0.5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #20b839;
+  color: white;
+  transition: 0.3s all; }
+  .modal.error {
+    border: 2px solid red;
+    background-color: #f8afaf;
+    color: black; }
+  .modal.good {
+    border: 2px solid #45ff16;
+    background-color: #b3fdb9; }
+  .modal.active {
+    opacity: 1;
+    visibility: visible; }
+
+.overlay {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  transition: .3s all; }
+  .overlay.active {
+    opacity: 1;
+    visibility: visible; }
 

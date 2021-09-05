@@ -9612,7 +9612,2384 @@ function Vuelidate(Vue) {
 
 var _default = Vuelidate;
 exports.default = _default;
-},{"./vval":"../node_modules/vuelidate/lib/vval.js","./params":"../node_modules/vuelidate/lib/params.js"}],"../node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
+},{"./vval":"../node_modules/vuelidate/lib/vval.js","./params":"../node_modules/vuelidate/lib/params.js"}],"../node_modules/vue-multiselect/dist/vue-multiselect.min.js":[function(require,module,exports) {
+var define;
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function (obj) { return typeof obj; }; } else { _typeof = function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+!function (t, e) {
+  "object" == (typeof exports === "undefined" ? "undefined" : _typeof(exports)) && "object" == (typeof module === "undefined" ? "undefined" : _typeof(module)) ? module.exports = e() : "function" == typeof define && define.amd ? define([], e) : "object" == (typeof exports === "undefined" ? "undefined" : _typeof(exports)) ? exports.VueMultiselect = e() : t.VueMultiselect = e();
+}(this, function () {
+  return function (t) {
+    function e(i) {
+      if (n[i]) return n[i].exports;
+      var r = n[i] = {
+        i: i,
+        l: !1,
+        exports: {}
+      };
+      return t[i].call(r.exports, r, r.exports, e), r.l = !0, r.exports;
+    }
+
+    var n = {};
+    return e.m = t, e.c = n, e.i = function (t) {
+      return t;
+    }, e.d = function (t, n, i) {
+      e.o(t, n) || Object.defineProperty(t, n, {
+        configurable: !1,
+        enumerable: !0,
+        get: i
+      });
+    }, e.n = function (t) {
+      var n = t && t.__esModule ? function () {
+        return t.default;
+      } : function () {
+        return t;
+      };
+      return e.d(n, "a", n), n;
+    }, e.o = function (t, e) {
+      return Object.prototype.hasOwnProperty.call(t, e);
+    }, e.p = "/", e(e.s = 60);
+  }([function (t, e) {
+    var n = t.exports = "undefined" != typeof window && window.Math == Math ? window : "undefined" != typeof self && self.Math == Math ? self : Function("return this")();
+    "number" == typeof __g && (__g = n);
+  }, function (t, e, n) {
+    var i = n(49)("wks"),
+        r = n(30),
+        o = n(0).Symbol,
+        s = "function" == typeof o;
+    (t.exports = function (t) {
+      return i[t] || (i[t] = s && o[t] || (s ? o : r)("Symbol." + t));
+    }).store = i;
+  }, function (t, e, n) {
+    var i = n(5);
+
+    t.exports = function (t) {
+      if (!i(t)) throw TypeError(t + " is not an object!");
+      return t;
+    };
+  }, function (t, e, n) {
+    var i = n(0),
+        r = n(10),
+        o = n(8),
+        s = n(6),
+        u = n(11),
+        a = function (t, e, n) {
+      var l,
+          c,
+          f,
+          p,
+          h = t & a.F,
+          d = t & a.G,
+          v = t & a.S,
+          g = t & a.P,
+          y = t & a.B,
+          m = d ? i : v ? i[e] || (i[e] = {}) : (i[e] || {}).prototype,
+          b = d ? r : r[e] || (r[e] = {}),
+          _ = b.prototype || (b.prototype = {});
+
+      d && (n = e);
+
+      for (l in n) c = !h && m && void 0 !== m[l], f = (c ? m : n)[l], p = y && c ? u(f, i) : g && "function" == typeof f ? u(Function.call, f) : f, m && s(m, l, f, t & a.U), b[l] != f && o(b, l, p), g && _[l] != f && (_[l] = f);
+    };
+
+    i.core = r, a.F = 1, a.G = 2, a.S = 4, a.P = 8, a.B = 16, a.W = 32, a.U = 64, a.R = 128, t.exports = a;
+  }, function (t, e, n) {
+    t.exports = !n(7)(function () {
+      return 7 != Object.defineProperty({}, "a", {
+        get: function () {
+          return 7;
+        }
+      }).a;
+    });
+  }, function (t, e) {
+    t.exports = function (t) {
+      return "object" == _typeof(t) ? null !== t : "function" == typeof t;
+    };
+  }, function (t, e, n) {
+    var i = n(0),
+        r = n(8),
+        o = n(12),
+        s = n(30)("src"),
+        u = Function.toString,
+        a = ("" + u).split("toString");
+    n(10).inspectSource = function (t) {
+      return u.call(t);
+    }, (t.exports = function (t, e, n, u) {
+      var l = "function" == typeof n;
+      l && (o(n, "name") || r(n, "name", e)), t[e] !== n && (l && (o(n, s) || r(n, s, t[e] ? "" + t[e] : a.join(String(e)))), t === i ? t[e] = n : u ? t[e] ? t[e] = n : r(t, e, n) : (delete t[e], r(t, e, n)));
+    })(Function.prototype, "toString", function () {
+      return "function" == typeof this && this[s] || u.call(this);
+    });
+  }, function (t, e) {
+    t.exports = function (t) {
+      try {
+        return !!t();
+      } catch (t) {
+        return !0;
+      }
+    };
+  }, function (t, e, n) {
+    var i = n(13),
+        r = n(25);
+    t.exports = n(4) ? function (t, e, n) {
+      return i.f(t, e, r(1, n));
+    } : function (t, e, n) {
+      return t[e] = n, t;
+    };
+  }, function (t, e) {
+    var n = {}.toString;
+
+    t.exports = function (t) {
+      return n.call(t).slice(8, -1);
+    };
+  }, function (t, e) {
+    var n = t.exports = {
+      version: "2.5.7"
+    };
+    "number" == typeof __e && (__e = n);
+  }, function (t, e, n) {
+    var i = n(14);
+
+    t.exports = function (t, e, n) {
+      if (i(t), void 0 === e) return t;
+
+      switch (n) {
+        case 1:
+          return function (n) {
+            return t.call(e, n);
+          };
+
+        case 2:
+          return function (n, i) {
+            return t.call(e, n, i);
+          };
+
+        case 3:
+          return function (n, i, r) {
+            return t.call(e, n, i, r);
+          };
+      }
+
+      return function () {
+        return t.apply(e, arguments);
+      };
+    };
+  }, function (t, e) {
+    var n = {}.hasOwnProperty;
+
+    t.exports = function (t, e) {
+      return n.call(t, e);
+    };
+  }, function (t, e, n) {
+    var i = n(2),
+        r = n(41),
+        o = n(29),
+        s = Object.defineProperty;
+    e.f = n(4) ? Object.defineProperty : function (t, e, n) {
+      if (i(t), e = o(e, !0), i(n), r) try {
+        return s(t, e, n);
+      } catch (t) {}
+      if ("get" in n || "set" in n) throw TypeError("Accessors not supported!");
+      return "value" in n && (t[e] = n.value), t;
+    };
+  }, function (t, e) {
+    t.exports = function (t) {
+      if ("function" != typeof t) throw TypeError(t + " is not a function!");
+      return t;
+    };
+  }, function (t, e) {
+    t.exports = {};
+  }, function (t, e) {
+    t.exports = function (t) {
+      if (void 0 == t) throw TypeError("Can't call method on  " + t);
+      return t;
+    };
+  }, function (t, e, n) {
+    "use strict";
+
+    var i = n(7);
+
+    t.exports = function (t, e) {
+      return !!t && i(function () {
+        e ? t.call(null, function () {}, 1) : t.call(null);
+      });
+    };
+  }, function (t, e, n) {
+    var i = n(23),
+        r = n(16);
+
+    t.exports = function (t) {
+      return i(r(t));
+    };
+  }, function (t, e, n) {
+    var i = n(53),
+        r = Math.min;
+
+    t.exports = function (t) {
+      return t > 0 ? r(i(t), 9007199254740991) : 0;
+    };
+  }, function (t, e, n) {
+    var i = n(11),
+        r = n(23),
+        o = n(28),
+        s = n(19),
+        u = n(64);
+
+    t.exports = function (t, e) {
+      var n = 1 == t,
+          a = 2 == t,
+          l = 3 == t,
+          c = 4 == t,
+          f = 6 == t,
+          p = 5 == t || f,
+          h = e || u;
+      return function (e, u, d) {
+        for (var v, g, y = o(e), m = r(y), b = i(u, d, 3), _ = s(m.length), x = 0, w = n ? h(e, _) : a ? h(e, 0) : void 0; _ > x; x++) if ((p || x in m) && (v = m[x], g = b(v, x, y), t)) if (n) w[x] = g;else if (g) switch (t) {
+          case 3:
+            return !0;
+
+          case 5:
+            return v;
+
+          case 6:
+            return x;
+
+          case 2:
+            w.push(v);
+        } else if (c) return !1;
+
+        return f ? -1 : l || c ? c : w;
+      };
+    };
+  }, function (t, e, n) {
+    var i = n(5),
+        r = n(0).document,
+        o = i(r) && i(r.createElement);
+
+    t.exports = function (t) {
+      return o ? r.createElement(t) : {};
+    };
+  }, function (t, e) {
+    t.exports = "constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",");
+  }, function (t, e, n) {
+    var i = n(9);
+    t.exports = Object("z").propertyIsEnumerable(0) ? Object : function (t) {
+      return "String" == i(t) ? t.split("") : Object(t);
+    };
+  }, function (t, e) {
+    t.exports = !1;
+  }, function (t, e) {
+    t.exports = function (t, e) {
+      return {
+        enumerable: !(1 & t),
+        configurable: !(2 & t),
+        writable: !(4 & t),
+        value: e
+      };
+    };
+  }, function (t, e, n) {
+    var i = n(13).f,
+        r = n(12),
+        o = n(1)("toStringTag");
+
+    t.exports = function (t, e, n) {
+      t && !r(t = n ? t : t.prototype, o) && i(t, o, {
+        configurable: !0,
+        value: e
+      });
+    };
+  }, function (t, e, n) {
+    var i = n(49)("keys"),
+        r = n(30);
+
+    t.exports = function (t) {
+      return i[t] || (i[t] = r(t));
+    };
+  }, function (t, e, n) {
+    var i = n(16);
+
+    t.exports = function (t) {
+      return Object(i(t));
+    };
+  }, function (t, e, n) {
+    var i = n(5);
+
+    t.exports = function (t, e) {
+      if (!i(t)) return t;
+      var n, r;
+      if (e && "function" == typeof (n = t.toString) && !i(r = n.call(t))) return r;
+      if ("function" == typeof (n = t.valueOf) && !i(r = n.call(t))) return r;
+      if (!e && "function" == typeof (n = t.toString) && !i(r = n.call(t))) return r;
+      throw TypeError("Can't convert object to primitive value");
+    };
+  }, function (t, e) {
+    var n = 0,
+        i = Math.random();
+
+    t.exports = function (t) {
+      return "Symbol(".concat(void 0 === t ? "" : t, ")_", (++n + i).toString(36));
+    };
+  }, function (t, e, n) {
+    "use strict";
+
+    var i = n(0),
+        r = n(12),
+        o = n(9),
+        s = n(67),
+        u = n(29),
+        a = n(7),
+        l = n(77).f,
+        c = n(45).f,
+        f = n(13).f,
+        p = n(51).trim,
+        h = i.Number,
+        d = h,
+        v = h.prototype,
+        g = "Number" == o(n(44)(v)),
+        y = ("trim" in String.prototype),
+        m = function (t) {
+      var e = u(t, !1);
+
+      if ("string" == typeof e && e.length > 2) {
+        e = y ? e.trim() : p(e, 3);
+        var n,
+            i,
+            r,
+            o = e.charCodeAt(0);
+
+        if (43 === o || 45 === o) {
+          if (88 === (n = e.charCodeAt(2)) || 120 === n) return NaN;
+        } else if (48 === o) {
+          switch (e.charCodeAt(1)) {
+            case 66:
+            case 98:
+              i = 2, r = 49;
+              break;
+
+            case 79:
+            case 111:
+              i = 8, r = 55;
+              break;
+
+            default:
+              return +e;
+          }
+
+          for (var s, a = e.slice(2), l = 0, c = a.length; l < c; l++) if ((s = a.charCodeAt(l)) < 48 || s > r) return NaN;
+
+          return parseInt(a, i);
+        }
+      }
+
+      return +e;
+    };
+
+    if (!h(" 0o1") || !h("0b1") || h("+0x1")) {
+      h = function (t) {
+        var e = arguments.length < 1 ? 0 : t,
+            n = this;
+        return n instanceof h && (g ? a(function () {
+          v.valueOf.call(n);
+        }) : "Number" != o(n)) ? s(new d(m(e)), n, h) : m(e);
+      };
+
+      for (var b, _ = n(4) ? l(d) : "MAX_VALUE,MIN_VALUE,NaN,NEGATIVE_INFINITY,POSITIVE_INFINITY,EPSILON,isFinite,isInteger,isNaN,isSafeInteger,MAX_SAFE_INTEGER,MIN_SAFE_INTEGER,parseFloat,parseInt,isInteger".split(","), x = 0; _.length > x; x++) r(d, b = _[x]) && !r(h, b) && f(h, b, c(d, b));
+
+      h.prototype = v, v.constructor = h, n(6)(i, "Number", h);
+    }
+  }, function (t, e, n) {
+    "use strict";
+
+    function i(t) {
+      return 0 !== t && (!(!Array.isArray(t) || 0 !== t.length) || !t);
+    }
+
+    function r(t) {
+      return function () {
+        return !t.apply(void 0, arguments);
+      };
+    }
+
+    function o(t, e) {
+      return void 0 === t && (t = "undefined"), null === t && (t = "null"), !1 === t && (t = "false"), -1 !== t.toString().toLowerCase().indexOf(e.trim());
+    }
+
+    function s(t, e, n, i) {
+      return t.filter(function (t) {
+        return o(i(t, n), e);
+      });
+    }
+
+    function u(t) {
+      return t.filter(function (t) {
+        return !t.$isLabel;
+      });
+    }
+
+    function a(t, e) {
+      return function (n) {
+        return n.reduce(function (n, i) {
+          return i[t] && i[t].length ? (n.push({
+            $groupLabel: i[e],
+            $isLabel: !0
+          }), n.concat(i[t])) : n;
+        }, []);
+      };
+    }
+
+    function l(t, e, i, r, o) {
+      return function (u) {
+        return u.map(function (u) {
+          var a;
+          if (!u[i]) return console.warn("Options passed to vue-multiselect do not contain groups, despite the config."), [];
+          var l = s(u[i], t, e, o);
+          return l.length ? (a = {}, n.i(d.a)(a, r, u[r]), n.i(d.a)(a, i, l), a) : [];
+        });
+      };
+    }
+
+    var c = n(59),
+        f = n(54),
+        p = (n.n(f), n(95)),
+        h = (n.n(p), n(31)),
+        d = (n.n(h), n(58)),
+        v = n(91),
+        g = (n.n(v), n(98)),
+        y = (n.n(g), n(92)),
+        m = (n.n(y), n(88)),
+        b = (n.n(m), n(97)),
+        _ = (n.n(b), n(89)),
+        x = (n.n(_), n(96)),
+        w = (n.n(x), n(93)),
+        S = (n.n(w), n(90)),
+        O = (n.n(S), function () {
+      for (var t = arguments.length, e = new Array(t), n = 0; n < t; n++) e[n] = arguments[n];
+
+      return function (t) {
+        return e.reduce(function (t, e) {
+          return e(t);
+        }, t);
+      };
+    });
+
+    e.a = {
+      data: function () {
+        return {
+          search: "",
+          isOpen: !1,
+          preferredOpenDirection: "below",
+          optimizedHeight: this.maxHeight
+        };
+      },
+      props: {
+        internalSearch: {
+          type: Boolean,
+          default: !0
+        },
+        options: {
+          type: Array,
+          required: !0
+        },
+        multiple: {
+          type: Boolean,
+          default: !1
+        },
+        value: {
+          type: null,
+          default: function () {
+            return [];
+          }
+        },
+        trackBy: {
+          type: String
+        },
+        label: {
+          type: String
+        },
+        searchable: {
+          type: Boolean,
+          default: !0
+        },
+        clearOnSelect: {
+          type: Boolean,
+          default: !0
+        },
+        hideSelected: {
+          type: Boolean,
+          default: !1
+        },
+        placeholder: {
+          type: String,
+          default: "Select option"
+        },
+        allowEmpty: {
+          type: Boolean,
+          default: !0
+        },
+        resetAfter: {
+          type: Boolean,
+          default: !1
+        },
+        closeOnSelect: {
+          type: Boolean,
+          default: !0
+        },
+        customLabel: {
+          type: Function,
+          default: function (t, e) {
+            return i(t) ? "" : e ? t[e] : t;
+          }
+        },
+        taggable: {
+          type: Boolean,
+          default: !1
+        },
+        tagPlaceholder: {
+          type: String,
+          default: "Press enter to create a tag"
+        },
+        tagPosition: {
+          type: String,
+          default: "top"
+        },
+        max: {
+          type: [Number, Boolean],
+          default: !1
+        },
+        id: {
+          default: null
+        },
+        optionsLimit: {
+          type: Number,
+          default: 1e3
+        },
+        groupValues: {
+          type: String
+        },
+        groupLabel: {
+          type: String
+        },
+        groupSelect: {
+          type: Boolean,
+          default: !1
+        },
+        blockKeys: {
+          type: Array,
+          default: function () {
+            return [];
+          }
+        },
+        preserveSearch: {
+          type: Boolean,
+          default: !1
+        },
+        preselectFirst: {
+          type: Boolean,
+          default: !1
+        }
+      },
+      mounted: function () {
+        !this.multiple && this.max && console.warn("[Vue-Multiselect warn]: Max prop should not be used when prop Multiple equals false."), this.preselectFirst && !this.internalValue.length && this.options.length && this.select(this.filteredOptions[0]);
+      },
+      computed: {
+        internalValue: function () {
+          return this.value || 0 === this.value ? Array.isArray(this.value) ? this.value : [this.value] : [];
+        },
+        filteredOptions: function () {
+          var t = this.search || "",
+              e = t.toLowerCase().trim(),
+              n = this.options.concat();
+          return n = this.internalSearch ? this.groupValues ? this.filterAndFlat(n, e, this.label) : s(n, e, this.label, this.customLabel) : this.groupValues ? a(this.groupValues, this.groupLabel)(n) : n, n = this.hideSelected ? n.filter(r(this.isSelected)) : n, this.taggable && e.length && !this.isExistingOption(e) && ("bottom" === this.tagPosition ? n.push({
+            isTag: !0,
+            label: t
+          }) : n.unshift({
+            isTag: !0,
+            label: t
+          })), n.slice(0, this.optionsLimit);
+        },
+        valueKeys: function () {
+          var t = this;
+          return this.trackBy ? this.internalValue.map(function (e) {
+            return e[t.trackBy];
+          }) : this.internalValue;
+        },
+        optionKeys: function () {
+          var t = this;
+          return (this.groupValues ? this.flatAndStrip(this.options) : this.options).map(function (e) {
+            return t.customLabel(e, t.label).toString().toLowerCase();
+          });
+        },
+        currentOptionLabel: function () {
+          return this.multiple ? this.searchable ? "" : this.placeholder : this.internalValue.length ? this.getOptionLabel(this.internalValue[0]) : this.searchable ? "" : this.placeholder;
+        }
+      },
+      watch: {
+        internalValue: function () {
+          this.resetAfter && this.internalValue.length && (this.search = "", this.$emit("input", this.multiple ? [] : null));
+        },
+        search: function () {
+          this.$emit("search-change", this.search, this.id);
+        }
+      },
+      methods: {
+        getValue: function () {
+          return this.multiple ? this.internalValue : 0 === this.internalValue.length ? null : this.internalValue[0];
+        },
+        filterAndFlat: function (t, e, n) {
+          return O(l(e, n, this.groupValues, this.groupLabel, this.customLabel), a(this.groupValues, this.groupLabel))(t);
+        },
+        flatAndStrip: function (t) {
+          return O(a(this.groupValues, this.groupLabel), u)(t);
+        },
+        updateSearch: function (t) {
+          this.search = t;
+        },
+        isExistingOption: function (t) {
+          return !!this.options && this.optionKeys.indexOf(t) > -1;
+        },
+        isSelected: function (t) {
+          var e = this.trackBy ? t[this.trackBy] : t;
+          return this.valueKeys.indexOf(e) > -1;
+        },
+        isOptionDisabled: function (t) {
+          return !!t.$isDisabled;
+        },
+        getOptionLabel: function (t) {
+          if (i(t)) return "";
+          if (t.isTag) return t.label;
+          if (t.$isLabel) return t.$groupLabel;
+          var e = this.customLabel(t, this.label);
+          return i(e) ? "" : e;
+        },
+        select: function (t, e) {
+          if (t.$isLabel && this.groupSelect) return void this.selectGroup(t);
+
+          if (!(-1 !== this.blockKeys.indexOf(e) || this.disabled || t.$isDisabled || t.$isLabel) && (!this.max || !this.multiple || this.internalValue.length !== this.max) && ("Tab" !== e || this.pointerDirty)) {
+            if (t.isTag) this.$emit("tag", t.label, this.id), this.search = "", this.closeOnSelect && !this.multiple && this.deactivate();else {
+              if (this.isSelected(t)) return void ("Tab" !== e && this.removeElement(t));
+              this.$emit("select", t, this.id), this.multiple ? this.$emit("input", this.internalValue.concat([t]), this.id) : this.$emit("input", t, this.id), this.clearOnSelect && (this.search = "");
+            }
+            this.closeOnSelect && this.deactivate();
+          }
+        },
+        selectGroup: function (t) {
+          var e = this,
+              n = this.options.find(function (n) {
+            return n[e.groupLabel] === t.$groupLabel;
+          });
+          if (n) if (this.wholeGroupSelected(n)) {
+            this.$emit("remove", n[this.groupValues], this.id);
+            var i = this.internalValue.filter(function (t) {
+              return -1 === n[e.groupValues].indexOf(t);
+            });
+            this.$emit("input", i, this.id);
+          } else {
+            var r = n[this.groupValues].filter(function (t) {
+              return !(e.isOptionDisabled(t) || e.isSelected(t));
+            });
+            this.$emit("select", r, this.id), this.$emit("input", this.internalValue.concat(r), this.id);
+          }
+        },
+        wholeGroupSelected: function (t) {
+          var e = this;
+          return t[this.groupValues].every(function (t) {
+            return e.isSelected(t) || e.isOptionDisabled(t);
+          });
+        },
+        wholeGroupDisabled: function (t) {
+          return t[this.groupValues].every(this.isOptionDisabled);
+        },
+        removeElement: function (t) {
+          var e = !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1];
+
+          if (!this.disabled && !t.$isDisabled) {
+            if (!this.allowEmpty && this.internalValue.length <= 1) return void this.deactivate();
+            var i = "object" === n.i(c.a)(t) ? this.valueKeys.indexOf(t[this.trackBy]) : this.valueKeys.indexOf(t);
+
+            if (this.$emit("remove", t, this.id), this.multiple) {
+              var r = this.internalValue.slice(0, i).concat(this.internalValue.slice(i + 1));
+              this.$emit("input", r, this.id);
+            } else this.$emit("input", null, this.id);
+
+            this.closeOnSelect && e && this.deactivate();
+          }
+        },
+        removeLastElement: function () {
+          -1 === this.blockKeys.indexOf("Delete") && 0 === this.search.length && Array.isArray(this.internalValue) && this.internalValue.length && this.removeElement(this.internalValue[this.internalValue.length - 1], !1);
+        },
+        activate: function () {
+          var t = this;
+          this.isOpen || this.disabled || (this.adjustPosition(), this.groupValues && 0 === this.pointer && this.filteredOptions.length && (this.pointer = 1), this.isOpen = !0, this.searchable ? (this.preserveSearch || (this.search = ""), this.$nextTick(function () {
+            return t.$refs.search.focus();
+          })) : this.$el.focus(), this.$emit("open", this.id));
+        },
+        deactivate: function () {
+          this.isOpen && (this.isOpen = !1, this.searchable ? this.$refs.search.blur() : this.$el.blur(), this.preserveSearch || (this.search = ""), this.$emit("close", this.getValue(), this.id));
+        },
+        toggle: function () {
+          this.isOpen ? this.deactivate() : this.activate();
+        },
+        adjustPosition: function () {
+          if ("undefined" != typeof window) {
+            var t = this.$el.getBoundingClientRect().top,
+                e = window.innerHeight - this.$el.getBoundingClientRect().bottom;
+            e > this.maxHeight || e > t || "below" === this.openDirection || "bottom" === this.openDirection ? (this.preferredOpenDirection = "below", this.optimizedHeight = Math.min(e - 40, this.maxHeight)) : (this.preferredOpenDirection = "above", this.optimizedHeight = Math.min(t - 40, this.maxHeight));
+          }
+        }
+      }
+    };
+  }, function (t, e, n) {
+    "use strict";
+
+    var i = n(54),
+        r = (n.n(i), n(31));
+    n.n(r);
+    e.a = {
+      data: function () {
+        return {
+          pointer: 0,
+          pointerDirty: !1
+        };
+      },
+      props: {
+        showPointer: {
+          type: Boolean,
+          default: !0
+        },
+        optionHeight: {
+          type: Number,
+          default: 40
+        }
+      },
+      computed: {
+        pointerPosition: function () {
+          return this.pointer * this.optionHeight;
+        },
+        visibleElements: function () {
+          return this.optimizedHeight / this.optionHeight;
+        }
+      },
+      watch: {
+        filteredOptions: function () {
+          this.pointerAdjust();
+        },
+        isOpen: function () {
+          this.pointerDirty = !1;
+        }
+      },
+      methods: {
+        optionHighlight: function (t, e) {
+          return {
+            "multiselect__option--highlight": t === this.pointer && this.showPointer,
+            "multiselect__option--selected": this.isSelected(e)
+          };
+        },
+        groupHighlight: function (t, e) {
+          var n = this;
+          if (!this.groupSelect) return ["multiselect__option--group", "multiselect__option--disabled"];
+          var i = this.options.find(function (t) {
+            return t[n.groupLabel] === e.$groupLabel;
+          });
+          return i && !this.wholeGroupDisabled(i) ? ["multiselect__option--group", {
+            "multiselect__option--highlight": t === this.pointer && this.showPointer
+          }, {
+            "multiselect__option--group-selected": this.wholeGroupSelected(i)
+          }] : "multiselect__option--disabled";
+        },
+        addPointerElement: function () {
+          var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "Enter",
+              e = t.key;
+          this.filteredOptions.length > 0 && this.select(this.filteredOptions[this.pointer], e), this.pointerReset();
+        },
+        pointerForward: function () {
+          this.pointer < this.filteredOptions.length - 1 && (this.pointer++, this.$refs.list.scrollTop <= this.pointerPosition - (this.visibleElements - 1) * this.optionHeight && (this.$refs.list.scrollTop = this.pointerPosition - (this.visibleElements - 1) * this.optionHeight), this.filteredOptions[this.pointer] && this.filteredOptions[this.pointer].$isLabel && !this.groupSelect && this.pointerForward()), this.pointerDirty = !0;
+        },
+        pointerBackward: function () {
+          this.pointer > 0 ? (this.pointer--, this.$refs.list.scrollTop >= this.pointerPosition && (this.$refs.list.scrollTop = this.pointerPosition), this.filteredOptions[this.pointer] && this.filteredOptions[this.pointer].$isLabel && !this.groupSelect && this.pointerBackward()) : this.filteredOptions[this.pointer] && this.filteredOptions[0].$isLabel && !this.groupSelect && this.pointerForward(), this.pointerDirty = !0;
+        },
+        pointerReset: function () {
+          this.closeOnSelect && (this.pointer = 0, this.$refs.list && (this.$refs.list.scrollTop = 0));
+        },
+        pointerAdjust: function () {
+          this.pointer >= this.filteredOptions.length - 1 && (this.pointer = this.filteredOptions.length ? this.filteredOptions.length - 1 : 0), this.filteredOptions.length > 0 && this.filteredOptions[this.pointer].$isLabel && !this.groupSelect && this.pointerForward();
+        },
+        pointerSet: function (t) {
+          this.pointer = t, this.pointerDirty = !0;
+        }
+      }
+    };
+  }, function (t, e, n) {
+    "use strict";
+
+    var i = n(36),
+        r = n(74),
+        o = n(15),
+        s = n(18);
+    t.exports = n(72)(Array, "Array", function (t, e) {
+      this._t = s(t), this._i = 0, this._k = e;
+    }, function () {
+      var t = this._t,
+          e = this._k,
+          n = this._i++;
+      return !t || n >= t.length ? (this._t = void 0, r(1)) : "keys" == e ? r(0, n) : "values" == e ? r(0, t[n]) : r(0, [n, t[n]]);
+    }, "values"), o.Arguments = o.Array, i("keys"), i("values"), i("entries");
+  }, function (t, e, n) {
+    "use strict";
+
+    var i = n(31),
+        r = (n.n(i), n(32)),
+        o = n(33);
+    e.a = {
+      name: "vue-multiselect",
+      mixins: [r.a, o.a],
+      props: {
+        name: {
+          type: String,
+          default: ""
+        },
+        selectLabel: {
+          type: String,
+          default: "Press enter to select"
+        },
+        selectGroupLabel: {
+          type: String,
+          default: "Press enter to select group"
+        },
+        selectedLabel: {
+          type: String,
+          default: "Selected"
+        },
+        deselectLabel: {
+          type: String,
+          default: "Press enter to remove"
+        },
+        deselectGroupLabel: {
+          type: String,
+          default: "Press enter to deselect group"
+        },
+        showLabels: {
+          type: Boolean,
+          default: !0
+        },
+        limit: {
+          type: Number,
+          default: 99999
+        },
+        maxHeight: {
+          type: Number,
+          default: 300
+        },
+        limitText: {
+          type: Function,
+          default: function (t) {
+            return "and ".concat(t, " more");
+          }
+        },
+        loading: {
+          type: Boolean,
+          default: !1
+        },
+        disabled: {
+          type: Boolean,
+          default: !1
+        },
+        openDirection: {
+          type: String,
+          default: ""
+        },
+        showNoOptions: {
+          type: Boolean,
+          default: !0
+        },
+        showNoResults: {
+          type: Boolean,
+          default: !0
+        },
+        tabindex: {
+          type: Number,
+          default: 0
+        }
+      },
+      computed: {
+        isSingleLabelVisible: function () {
+          return (this.singleValue || 0 === this.singleValue) && (!this.isOpen || !this.searchable) && !this.visibleValues.length;
+        },
+        isPlaceholderVisible: function () {
+          return !(this.internalValue.length || this.searchable && this.isOpen);
+        },
+        visibleValues: function () {
+          return this.multiple ? this.internalValue.slice(0, this.limit) : [];
+        },
+        singleValue: function () {
+          return this.internalValue[0];
+        },
+        deselectLabelText: function () {
+          return this.showLabels ? this.deselectLabel : "";
+        },
+        deselectGroupLabelText: function () {
+          return this.showLabels ? this.deselectGroupLabel : "";
+        },
+        selectLabelText: function () {
+          return this.showLabels ? this.selectLabel : "";
+        },
+        selectGroupLabelText: function () {
+          return this.showLabels ? this.selectGroupLabel : "";
+        },
+        selectedLabelText: function () {
+          return this.showLabels ? this.selectedLabel : "";
+        },
+        inputStyle: function () {
+          if (this.searchable || this.multiple && this.value && this.value.length) return this.isOpen ? {
+            width: "100%"
+          } : {
+            width: "0",
+            position: "absolute",
+            padding: "0"
+          };
+        },
+        contentStyle: function () {
+          return this.options.length ? {
+            display: "inline-block"
+          } : {
+            display: "block"
+          };
+        },
+        isAbove: function () {
+          return "above" === this.openDirection || "top" === this.openDirection || "below" !== this.openDirection && "bottom" !== this.openDirection && "above" === this.preferredOpenDirection;
+        },
+        showSearchInput: function () {
+          return this.searchable && (!this.hasSingleSelectedSlot || !this.visibleSingleValue && 0 !== this.visibleSingleValue || this.isOpen);
+        }
+      }
+    };
+  }, function (t, e, n) {
+    var i = n(1)("unscopables"),
+        r = Array.prototype;
+    void 0 == r[i] && n(8)(r, i, {}), t.exports = function (t) {
+      r[i][t] = !0;
+    };
+  }, function (t, e, n) {
+    var i = n(18),
+        r = n(19),
+        o = n(85);
+
+    t.exports = function (t) {
+      return function (e, n, s) {
+        var u,
+            a = i(e),
+            l = r(a.length),
+            c = o(s, l);
+
+        if (t && n != n) {
+          for (; l > c;) if ((u = a[c++]) != u) return !0;
+        } else for (; l > c; c++) if ((t || c in a) && a[c] === n) return t || c || 0;
+
+        return !t && -1;
+      };
+    };
+  }, function (t, e, n) {
+    var i = n(9),
+        r = n(1)("toStringTag"),
+        o = "Arguments" == i(function () {
+      return arguments;
+    }()),
+        s = function (t, e) {
+      try {
+        return t[e];
+      } catch (t) {}
+    };
+
+    t.exports = function (t) {
+      var e, n, u;
+      return void 0 === t ? "Undefined" : null === t ? "Null" : "string" == typeof (n = s(e = Object(t), r)) ? n : o ? i(e) : "Object" == (u = i(e)) && "function" == typeof e.callee ? "Arguments" : u;
+    };
+  }, function (t, e, n) {
+    "use strict";
+
+    var i = n(2);
+
+    t.exports = function () {
+      var t = i(this),
+          e = "";
+      return t.global && (e += "g"), t.ignoreCase && (e += "i"), t.multiline && (e += "m"), t.unicode && (e += "u"), t.sticky && (e += "y"), e;
+    };
+  }, function (t, e, n) {
+    var i = n(0).document;
+    t.exports = i && i.documentElement;
+  }, function (t, e, n) {
+    t.exports = !n(4) && !n(7)(function () {
+      return 7 != Object.defineProperty(n(21)("div"), "a", {
+        get: function () {
+          return 7;
+        }
+      }).a;
+    });
+  }, function (t, e, n) {
+    var i = n(9);
+
+    t.exports = Array.isArray || function (t) {
+      return "Array" == i(t);
+    };
+  }, function (t, e, n) {
+    "use strict";
+
+    function i(t) {
+      var e, n;
+      this.promise = new t(function (t, i) {
+        if (void 0 !== e || void 0 !== n) throw TypeError("Bad Promise constructor");
+        e = t, n = i;
+      }), this.resolve = r(e), this.reject = r(n);
+    }
+
+    var r = n(14);
+
+    t.exports.f = function (t) {
+      return new i(t);
+    };
+  }, function (t, e, n) {
+    var i = n(2),
+        r = n(76),
+        o = n(22),
+        s = n(27)("IE_PROTO"),
+        u = function () {},
+        a = function () {
+      var t,
+          e = n(21)("iframe"),
+          i = o.length;
+
+      for (e.style.display = "none", n(40).appendChild(e), e.src = "javascript:", t = e.contentWindow.document, t.open(), t.write("<script>document.F=Object<\/script>"), t.close(), a = t.F; i--;) delete a.prototype[o[i]];
+
+      return a();
+    };
+
+    t.exports = Object.create || function (t, e) {
+      var n;
+      return null !== t ? (u.prototype = i(t), n = new u(), u.prototype = null, n[s] = t) : n = a(), void 0 === e ? n : r(n, e);
+    };
+  }, function (t, e, n) {
+    var i = n(79),
+        r = n(25),
+        o = n(18),
+        s = n(29),
+        u = n(12),
+        a = n(41),
+        l = Object.getOwnPropertyDescriptor;
+    e.f = n(4) ? l : function (t, e) {
+      if (t = o(t), e = s(e, !0), a) try {
+        return l(t, e);
+      } catch (t) {}
+      if (u(t, e)) return r(!i.f.call(t, e), t[e]);
+    };
+  }, function (t, e, n) {
+    var i = n(12),
+        r = n(18),
+        o = n(37)(!1),
+        s = n(27)("IE_PROTO");
+
+    t.exports = function (t, e) {
+      var n,
+          u = r(t),
+          a = 0,
+          l = [];
+
+      for (n in u) n != s && i(u, n) && l.push(n);
+
+      for (; e.length > a;) i(u, n = e[a++]) && (~o(l, n) || l.push(n));
+
+      return l;
+    };
+  }, function (t, e, n) {
+    var i = n(46),
+        r = n(22);
+
+    t.exports = Object.keys || function (t) {
+      return i(t, r);
+    };
+  }, function (t, e, n) {
+    var i = n(2),
+        r = n(5),
+        o = n(43);
+
+    t.exports = function (t, e) {
+      if (i(t), r(e) && e.constructor === t) return e;
+      var n = o.f(t);
+      return (0, n.resolve)(e), n.promise;
+    };
+  }, function (t, e, n) {
+    var i = n(10),
+        r = n(0),
+        o = r["__core-js_shared__"] || (r["__core-js_shared__"] = {});
+    (t.exports = function (t, e) {
+      return o[t] || (o[t] = void 0 !== e ? e : {});
+    })("versions", []).push({
+      version: i.version,
+      mode: n(24) ? "pure" : "global",
+      copyright: "© 2018 Denis Pushkarev (zloirock.ru)"
+    });
+  }, function (t, e, n) {
+    var i = n(2),
+        r = n(14),
+        o = n(1)("species");
+
+    t.exports = function (t, e) {
+      var n,
+          s = i(t).constructor;
+      return void 0 === s || void 0 == (n = i(s)[o]) ? e : r(n);
+    };
+  }, function (t, e, n) {
+    var i = n(3),
+        r = n(16),
+        o = n(7),
+        s = n(84),
+        u = "[" + s + "]",
+        a = "​",
+        l = RegExp("^" + u + u + "*"),
+        c = RegExp(u + u + "*$"),
+        f = function (t, e, n) {
+      var r = {},
+          u = o(function () {
+        return !!s[t]() || a[t]() != a;
+      }),
+          l = r[t] = u ? e(p) : s[t];
+      n && (r[n] = l), i(i.P + i.F * u, "String", r);
+    },
+        p = f.trim = function (t, e) {
+      return t = String(r(t)), 1 & e && (t = t.replace(l, "")), 2 & e && (t = t.replace(c, "")), t;
+    };
+
+    t.exports = f;
+  }, function (t, e, n) {
+    var i,
+        r,
+        o,
+        s = n(11),
+        u = n(68),
+        a = n(40),
+        l = n(21),
+        c = n(0),
+        f = c.process,
+        p = c.setImmediate,
+        h = c.clearImmediate,
+        d = c.MessageChannel,
+        v = c.Dispatch,
+        g = 0,
+        y = {},
+        m = function () {
+      var t = +this;
+
+      if (y.hasOwnProperty(t)) {
+        var e = y[t];
+        delete y[t], e();
+      }
+    },
+        b = function (t) {
+      m.call(t.data);
+    };
+
+    p && h || (p = function (t) {
+      for (var e = [], n = 1; arguments.length > n;) e.push(arguments[n++]);
+
+      return y[++g] = function () {
+        u("function" == typeof t ? t : Function(t), e);
+      }, i(g), g;
+    }, h = function (t) {
+      delete y[t];
+    }, "process" == n(9)(f) ? i = function (t) {
+      f.nextTick(s(m, t, 1));
+    } : v && v.now ? i = function (t) {
+      v.now(s(m, t, 1));
+    } : d ? (r = new d(), o = r.port2, r.port1.onmessage = b, i = s(o.postMessage, o, 1)) : c.addEventListener && "function" == typeof postMessage && !c.importScripts ? (i = function (t) {
+      c.postMessage(t + "", "*");
+    }, c.addEventListener("message", b, !1)) : i = "onreadystatechange" in l("script") ? function (t) {
+      a.appendChild(l("script")).onreadystatechange = function () {
+        a.removeChild(this), m.call(t);
+      };
+    } : function (t) {
+      setTimeout(s(m, t, 1), 0);
+    }), t.exports = {
+      set: p,
+      clear: h
+    };
+  }, function (t, e) {
+    var n = Math.ceil,
+        i = Math.floor;
+
+    t.exports = function (t) {
+      return isNaN(t = +t) ? 0 : (t > 0 ? i : n)(t);
+    };
+  }, function (t, e, n) {
+    "use strict";
+
+    var i = n(3),
+        r = n(20)(5),
+        o = !0;
+    "find" in [] && Array(1).find(function () {
+      o = !1;
+    }), i(i.P + i.F * o, "Array", {
+      find: function (t) {
+        return r(this, t, arguments.length > 1 ? arguments[1] : void 0);
+      }
+    }), n(36)("find");
+  }, function (t, e, n) {
+    "use strict";
+
+    var i,
+        r,
+        o,
+        s,
+        u = n(24),
+        a = n(0),
+        l = n(11),
+        c = n(38),
+        f = n(3),
+        p = n(5),
+        h = n(14),
+        d = n(61),
+        v = n(66),
+        g = n(50),
+        y = n(52).set,
+        m = n(75)(),
+        b = n(43),
+        _ = n(80),
+        x = n(86),
+        w = n(48),
+        S = a.TypeError,
+        O = a.process,
+        L = O && O.versions,
+        k = L && L.v8 || "",
+        P = a.Promise,
+        T = "process" == c(O),
+        V = function () {},
+        E = r = b.f,
+        A = !!function () {
+      try {
+        var t = P.resolve(1),
+            e = (t.constructor = {})[n(1)("species")] = function (t) {
+          t(V, V);
+        };
+
+        return (T || "function" == typeof PromiseRejectionEvent) && t.then(V) instanceof e && 0 !== k.indexOf("6.6") && -1 === x.indexOf("Chrome/66");
+      } catch (t) {}
+    }(),
+        C = function (t) {
+      var e;
+      return !(!p(t) || "function" != typeof (e = t.then)) && e;
+    },
+        D = function (t, e) {
+      if (!t._n) {
+        t._n = !0;
+        var n = t._c;
+        m(function () {
+          for (var i = t._v, r = 1 == t._s, o = 0; n.length > o;) !function (e) {
+            var n,
+                o,
+                s,
+                u = r ? e.ok : e.fail,
+                a = e.resolve,
+                l = e.reject,
+                c = e.domain;
+
+            try {
+              u ? (r || (2 == t._h && $(t), t._h = 1), !0 === u ? n = i : (c && c.enter(), n = u(i), c && (c.exit(), s = !0)), n === e.promise ? l(S("Promise-chain cycle")) : (o = C(n)) ? o.call(n, a, l) : a(n)) : l(i);
+            } catch (t) {
+              c && !s && c.exit(), l(t);
+            }
+          }(n[o++]);
+
+          t._c = [], t._n = !1, e && !t._h && j(t);
+        });
+      }
+    },
+        j = function (t) {
+      y.call(a, function () {
+        var e,
+            n,
+            i,
+            r = t._v,
+            o = N(t);
+        if (o && (e = _(function () {
+          T ? O.emit("unhandledRejection", r, t) : (n = a.onunhandledrejection) ? n({
+            promise: t,
+            reason: r
+          }) : (i = a.console) && i.error && i.error("Unhandled promise rejection", r);
+        }), t._h = T || N(t) ? 2 : 1), t._a = void 0, o && e.e) throw e.v;
+      });
+    },
+        N = function (t) {
+      return 1 !== t._h && 0 === (t._a || t._c).length;
+    },
+        $ = function (t) {
+      y.call(a, function () {
+        var e;
+        T ? O.emit("rejectionHandled", t) : (e = a.onrejectionhandled) && e({
+          promise: t,
+          reason: t._v
+        });
+      });
+    },
+        F = function (t) {
+      var e = this;
+      e._d || (e._d = !0, e = e._w || e, e._v = t, e._s = 2, e._a || (e._a = e._c.slice()), D(e, !0));
+    },
+        M = function (t) {
+      var e,
+          n = this;
+
+      if (!n._d) {
+        n._d = !0, n = n._w || n;
+
+        try {
+          if (n === t) throw S("Promise can't be resolved itself");
+          (e = C(t)) ? m(function () {
+            var i = {
+              _w: n,
+              _d: !1
+            };
+
+            try {
+              e.call(t, l(M, i, 1), l(F, i, 1));
+            } catch (t) {
+              F.call(i, t);
+            }
+          }) : (n._v = t, n._s = 1, D(n, !1));
+        } catch (t) {
+          F.call({
+            _w: n,
+            _d: !1
+          }, t);
+        }
+      }
+    };
+
+    A || (P = function (t) {
+      d(this, P, "Promise", "_h"), h(t), i.call(this);
+
+      try {
+        t(l(M, this, 1), l(F, this, 1));
+      } catch (t) {
+        F.call(this, t);
+      }
+    }, i = function (t) {
+      this._c = [], this._a = void 0, this._s = 0, this._d = !1, this._v = void 0, this._h = 0, this._n = !1;
+    }, i.prototype = n(81)(P.prototype, {
+      then: function (t, e) {
+        var n = E(g(this, P));
+        return n.ok = "function" != typeof t || t, n.fail = "function" == typeof e && e, n.domain = T ? O.domain : void 0, this._c.push(n), this._a && this._a.push(n), this._s && D(this, !1), n.promise;
+      },
+      catch: function (t) {
+        return this.then(void 0, t);
+      }
+    }), o = function () {
+      var t = new i();
+      this.promise = t, this.resolve = l(M, t, 1), this.reject = l(F, t, 1);
+    }, b.f = E = function (t) {
+      return t === P || t === s ? new o(t) : r(t);
+    }), f(f.G + f.W + f.F * !A, {
+      Promise: P
+    }), n(26)(P, "Promise"), n(83)("Promise"), s = n(10).Promise, f(f.S + f.F * !A, "Promise", {
+      reject: function (t) {
+        var e = E(this);
+        return (0, e.reject)(t), e.promise;
+      }
+    }), f(f.S + f.F * (u || !A), "Promise", {
+      resolve: function (t) {
+        return w(u && this === s ? P : this, t);
+      }
+    }), f(f.S + f.F * !(A && n(73)(function (t) {
+      P.all(t).catch(V);
+    })), "Promise", {
+      all: function (t) {
+        var e = this,
+            n = E(e),
+            i = n.resolve,
+            r = n.reject,
+            o = _(function () {
+          var n = [],
+              o = 0,
+              s = 1;
+          v(t, !1, function (t) {
+            var u = o++,
+                a = !1;
+            n.push(void 0), s++, e.resolve(t).then(function (t) {
+              a || (a = !0, n[u] = t, --s || i(n));
+            }, r);
+          }), --s || i(n);
+        });
+
+        return o.e && r(o.v), n.promise;
+      },
+      race: function (t) {
+        var e = this,
+            n = E(e),
+            i = n.reject,
+            r = _(function () {
+          v(t, !1, function (t) {
+            e.resolve(t).then(n.resolve, i);
+          });
+        });
+
+        return r.e && i(r.v), n.promise;
+      }
+    });
+  }, function (t, e, n) {
+    "use strict";
+
+    var i = n(3),
+        r = n(10),
+        o = n(0),
+        s = n(50),
+        u = n(48);
+    i(i.P + i.R, "Promise", {
+      finally: function (t) {
+        var e = s(this, r.Promise || o.Promise),
+            n = "function" == typeof t;
+        return this.then(n ? function (n) {
+          return u(e, t()).then(function () {
+            return n;
+          });
+        } : t, n ? function (n) {
+          return u(e, t()).then(function () {
+            throw n;
+          });
+        } : t);
+      }
+    });
+  }, function (t, e, n) {
+    "use strict";
+
+    function i(t) {
+      n(99);
+    }
+
+    var r = n(35),
+        o = n(101),
+        s = n(100),
+        u = i,
+        a = s(r.a, o.a, !1, u, null, null);
+    e.a = a.exports;
+  }, function (t, e, n) {
+    "use strict";
+
+    function i(t, e, n) {
+      return e in t ? Object.defineProperty(t, e, {
+        value: n,
+        enumerable: !0,
+        configurable: !0,
+        writable: !0
+      }) : t[e] = n, t;
+    }
+
+    e.a = i;
+  }, function (t, e, n) {
+    "use strict";
+
+    function i(t) {
+      return (i = "function" == typeof Symbol && "symbol" == _typeof(Symbol.iterator) ? function (t) {
+        return _typeof(t);
+      } : function (t) {
+        return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : _typeof(t);
+      })(t);
+    }
+
+    function r(t) {
+      return (r = "function" == typeof Symbol && "symbol" === i(Symbol.iterator) ? function (t) {
+        return i(t);
+      } : function (t) {
+        return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : i(t);
+      })(t);
+    }
+
+    e.a = r;
+  }, function (t, e, n) {
+    "use strict";
+
+    Object.defineProperty(e, "__esModule", {
+      value: !0
+    });
+    var i = n(34),
+        r = (n.n(i), n(55)),
+        o = (n.n(r), n(56)),
+        s = (n.n(o), n(57)),
+        u = n(32),
+        a = n(33);
+    n.d(e, "Multiselect", function () {
+      return s.a;
+    }), n.d(e, "multiselectMixin", function () {
+      return u.a;
+    }), n.d(e, "pointerMixin", function () {
+      return a.a;
+    }), e.default = s.a;
+  }, function (t, e) {
+    t.exports = function (t, e, n, i) {
+      if (!(t instanceof e) || void 0 !== i && i in t) throw TypeError(n + ": incorrect invocation!");
+      return t;
+    };
+  }, function (t, e, n) {
+    var i = n(14),
+        r = n(28),
+        o = n(23),
+        s = n(19);
+
+    t.exports = function (t, e, n, u, a) {
+      i(e);
+      var l = r(t),
+          c = o(l),
+          f = s(l.length),
+          p = a ? f - 1 : 0,
+          h = a ? -1 : 1;
+      if (n < 2) for (;;) {
+        if (p in c) {
+          u = c[p], p += h;
+          break;
+        }
+
+        if (p += h, a ? p < 0 : f <= p) throw TypeError("Reduce of empty array with no initial value");
+      }
+
+      for (; a ? p >= 0 : f > p; p += h) p in c && (u = e(u, c[p], p, l));
+
+      return u;
+    };
+  }, function (t, e, n) {
+    var i = n(5),
+        r = n(42),
+        o = n(1)("species");
+
+    t.exports = function (t) {
+      var e;
+      return r(t) && (e = t.constructor, "function" != typeof e || e !== Array && !r(e.prototype) || (e = void 0), i(e) && null === (e = e[o]) && (e = void 0)), void 0 === e ? Array : e;
+    };
+  }, function (t, e, n) {
+    var i = n(63);
+
+    t.exports = function (t, e) {
+      return new (i(t))(e);
+    };
+  }, function (t, e, n) {
+    "use strict";
+
+    var i = n(8),
+        r = n(6),
+        o = n(7),
+        s = n(16),
+        u = n(1);
+
+    t.exports = function (t, e, n) {
+      var a = u(t),
+          l = n(s, a, ""[t]),
+          c = l[0],
+          f = l[1];
+      o(function () {
+        var e = {};
+        return e[a] = function () {
+          return 7;
+        }, 7 != ""[t](e);
+      }) && (r(String.prototype, t, c), i(RegExp.prototype, a, 2 == e ? function (t, e) {
+        return f.call(t, this, e);
+      } : function (t) {
+        return f.call(t, this);
+      }));
+    };
+  }, function (t, e, n) {
+    var i = n(11),
+        r = n(70),
+        o = n(69),
+        s = n(2),
+        u = n(19),
+        a = n(87),
+        l = {},
+        c = {},
+        e = t.exports = function (t, e, n, f, p) {
+      var h,
+          d,
+          v,
+          g,
+          y = p ? function () {
+        return t;
+      } : a(t),
+          m = i(n, f, e ? 2 : 1),
+          b = 0;
+      if ("function" != typeof y) throw TypeError(t + " is not iterable!");
+
+      if (o(y)) {
+        for (h = u(t.length); h > b; b++) if ((g = e ? m(s(d = t[b])[0], d[1]) : m(t[b])) === l || g === c) return g;
+      } else for (v = y.call(t); !(d = v.next()).done;) if ((g = r(v, m, d.value, e)) === l || g === c) return g;
+    };
+
+    e.BREAK = l, e.RETURN = c;
+  }, function (t, e, n) {
+    var i = n(5),
+        r = n(82).set;
+
+    t.exports = function (t, e, n) {
+      var o,
+          s = e.constructor;
+      return s !== n && "function" == typeof s && (o = s.prototype) !== n.prototype && i(o) && r && r(t, o), t;
+    };
+  }, function (t, e) {
+    t.exports = function (t, e, n) {
+      var i = void 0 === n;
+
+      switch (e.length) {
+        case 0:
+          return i ? t() : t.call(n);
+
+        case 1:
+          return i ? t(e[0]) : t.call(n, e[0]);
+
+        case 2:
+          return i ? t(e[0], e[1]) : t.call(n, e[0], e[1]);
+
+        case 3:
+          return i ? t(e[0], e[1], e[2]) : t.call(n, e[0], e[1], e[2]);
+
+        case 4:
+          return i ? t(e[0], e[1], e[2], e[3]) : t.call(n, e[0], e[1], e[2], e[3]);
+      }
+
+      return t.apply(n, e);
+    };
+  }, function (t, e, n) {
+    var i = n(15),
+        r = n(1)("iterator"),
+        o = Array.prototype;
+
+    t.exports = function (t) {
+      return void 0 !== t && (i.Array === t || o[r] === t);
+    };
+  }, function (t, e, n) {
+    var i = n(2);
+
+    t.exports = function (t, e, n, r) {
+      try {
+        return r ? e(i(n)[0], n[1]) : e(n);
+      } catch (e) {
+        var o = t.return;
+        throw void 0 !== o && i(o.call(t)), e;
+      }
+    };
+  }, function (t, e, n) {
+    "use strict";
+
+    var i = n(44),
+        r = n(25),
+        o = n(26),
+        s = {};
+    n(8)(s, n(1)("iterator"), function () {
+      return this;
+    }), t.exports = function (t, e, n) {
+      t.prototype = i(s, {
+        next: r(1, n)
+      }), o(t, e + " Iterator");
+    };
+  }, function (t, e, n) {
+    "use strict";
+
+    var i = n(24),
+        r = n(3),
+        o = n(6),
+        s = n(8),
+        u = n(15),
+        a = n(71),
+        l = n(26),
+        c = n(78),
+        f = n(1)("iterator"),
+        p = !([].keys && "next" in [].keys()),
+        h = function () {
+      return this;
+    };
+
+    t.exports = function (t, e, n, d, v, g, y) {
+      a(n, e, d);
+
+      var m,
+          b,
+          _,
+          x = function (t) {
+        if (!p && t in L) return L[t];
+
+        switch (t) {
+          case "keys":
+          case "values":
+            return function () {
+              return new n(this, t);
+            };
+        }
+
+        return function () {
+          return new n(this, t);
+        };
+      },
+          w = e + " Iterator",
+          S = "values" == v,
+          O = !1,
+          L = t.prototype,
+          k = L[f] || L["@@iterator"] || v && L[v],
+          P = k || x(v),
+          T = v ? S ? x("entries") : P : void 0,
+          V = "Array" == e ? L.entries || k : k;
+
+      if (V && (_ = c(V.call(new t()))) !== Object.prototype && _.next && (l(_, w, !0), i || "function" == typeof _[f] || s(_, f, h)), S && k && "values" !== k.name && (O = !0, P = function () {
+        return k.call(this);
+      }), i && !y || !p && !O && L[f] || s(L, f, P), u[e] = P, u[w] = h, v) if (m = {
+        values: S ? P : x("values"),
+        keys: g ? P : x("keys"),
+        entries: T
+      }, y) for (b in m) b in L || o(L, b, m[b]);else r(r.P + r.F * (p || O), e, m);
+      return m;
+    };
+  }, function (t, e, n) {
+    var i = n(1)("iterator"),
+        r = !1;
+
+    try {
+      var o = [7][i]();
+      o.return = function () {
+        r = !0;
+      }, Array.from(o, function () {
+        throw 2;
+      });
+    } catch (t) {}
+
+    t.exports = function (t, e) {
+      if (!e && !r) return !1;
+      var n = !1;
+
+      try {
+        var o = [7],
+            s = o[i]();
+        s.next = function () {
+          return {
+            done: n = !0
+          };
+        }, o[i] = function () {
+          return s;
+        }, t(o);
+      } catch (t) {}
+
+      return n;
+    };
+  }, function (t, e) {
+    t.exports = function (t, e) {
+      return {
+        value: e,
+        done: !!t
+      };
+    };
+  }, function (t, e, n) {
+    var i = n(0),
+        r = n(52).set,
+        o = i.MutationObserver || i.WebKitMutationObserver,
+        s = i.process,
+        u = i.Promise,
+        a = "process" == n(9)(s);
+
+    t.exports = function () {
+      var t,
+          e,
+          n,
+          l = function () {
+        var i, r;
+
+        for (a && (i = s.domain) && i.exit(); t;) {
+          r = t.fn, t = t.next;
+
+          try {
+            r();
+          } catch (i) {
+            throw t ? n() : e = void 0, i;
+          }
+        }
+
+        e = void 0, i && i.enter();
+      };
+
+      if (a) n = function () {
+        s.nextTick(l);
+      };else if (!o || i.navigator && i.navigator.standalone) {
+        if (u && u.resolve) {
+          var c = u.resolve(void 0);
+
+          n = function () {
+            c.then(l);
+          };
+        } else n = function () {
+          r.call(i, l);
+        };
+      } else {
+        var f = !0,
+            p = document.createTextNode("");
+        new o(l).observe(p, {
+          characterData: !0
+        }), n = function () {
+          p.data = f = !f;
+        };
+      }
+      return function (i) {
+        var r = {
+          fn: i,
+          next: void 0
+        };
+        e && (e.next = r), t || (t = r, n()), e = r;
+      };
+    };
+  }, function (t, e, n) {
+    var i = n(13),
+        r = n(2),
+        o = n(47);
+    t.exports = n(4) ? Object.defineProperties : function (t, e) {
+      r(t);
+
+      for (var n, s = o(e), u = s.length, a = 0; u > a;) i.f(t, n = s[a++], e[n]);
+
+      return t;
+    };
+  }, function (t, e, n) {
+    var i = n(46),
+        r = n(22).concat("length", "prototype");
+
+    e.f = Object.getOwnPropertyNames || function (t) {
+      return i(t, r);
+    };
+  }, function (t, e, n) {
+    var i = n(12),
+        r = n(28),
+        o = n(27)("IE_PROTO"),
+        s = Object.prototype;
+
+    t.exports = Object.getPrototypeOf || function (t) {
+      return t = r(t), i(t, o) ? t[o] : "function" == typeof t.constructor && t instanceof t.constructor ? t.constructor.prototype : t instanceof Object ? s : null;
+    };
+  }, function (t, e) {
+    e.f = {}.propertyIsEnumerable;
+  }, function (t, e) {
+    t.exports = function (t) {
+      try {
+        return {
+          e: !1,
+          v: t()
+        };
+      } catch (t) {
+        return {
+          e: !0,
+          v: t
+        };
+      }
+    };
+  }, function (t, e, n) {
+    var i = n(6);
+
+    t.exports = function (t, e, n) {
+      for (var r in e) i(t, r, e[r], n);
+
+      return t;
+    };
+  }, function (t, e, n) {
+    var i = n(5),
+        r = n(2),
+        o = function (t, e) {
+      if (r(t), !i(e) && null !== e) throw TypeError(e + ": can't set as prototype!");
+    };
+
+    t.exports = {
+      set: Object.setPrototypeOf || ("__proto__" in {} ? function (t, e, i) {
+        try {
+          i = n(11)(Function.call, n(45).f(Object.prototype, "__proto__").set, 2), i(t, []), e = !(t instanceof Array);
+        } catch (t) {
+          e = !0;
+        }
+
+        return function (t, n) {
+          return o(t, n), e ? t.__proto__ = n : i(t, n), t;
+        };
+      }({}, !1) : void 0),
+      check: o
+    };
+  }, function (t, e, n) {
+    "use strict";
+
+    var i = n(0),
+        r = n(13),
+        o = n(4),
+        s = n(1)("species");
+
+    t.exports = function (t) {
+      var e = i[t];
+      o && e && !e[s] && r.f(e, s, {
+        configurable: !0,
+        get: function () {
+          return this;
+        }
+      });
+    };
+  }, function (t, e) {
+    t.exports = "\t\n\x0B\f\r \xA0\u1680\u180E\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF";
+  }, function (t, e, n) {
+    var i = n(53),
+        r = Math.max,
+        o = Math.min;
+
+    t.exports = function (t, e) {
+      return t = i(t), t < 0 ? r(t + e, 0) : o(t, e);
+    };
+  }, function (t, e, n) {
+    var i = n(0),
+        r = i.navigator;
+    t.exports = r && r.userAgent || "";
+  }, function (t, e, n) {
+    var i = n(38),
+        r = n(1)("iterator"),
+        o = n(15);
+
+    t.exports = n(10).getIteratorMethod = function (t) {
+      if (void 0 != t) return t[r] || t["@@iterator"] || o[i(t)];
+    };
+  }, function (t, e, n) {
+    "use strict";
+
+    var i = n(3),
+        r = n(20)(2);
+    i(i.P + i.F * !n(17)([].filter, !0), "Array", {
+      filter: function (t) {
+        return r(this, t, arguments[1]);
+      }
+    });
+  }, function (t, e, n) {
+    "use strict";
+
+    var i = n(3),
+        r = n(37)(!1),
+        o = [].indexOf,
+        s = !!o && 1 / [1].indexOf(1, -0) < 0;
+    i(i.P + i.F * (s || !n(17)(o)), "Array", {
+      indexOf: function (t) {
+        return s ? o.apply(this, arguments) || 0 : r(this, t, arguments[1]);
+      }
+    });
+  }, function (t, e, n) {
+    var i = n(3);
+    i(i.S, "Array", {
+      isArray: n(42)
+    });
+  }, function (t, e, n) {
+    "use strict";
+
+    var i = n(3),
+        r = n(20)(1);
+    i(i.P + i.F * !n(17)([].map, !0), "Array", {
+      map: function (t) {
+        return r(this, t, arguments[1]);
+      }
+    });
+  }, function (t, e, n) {
+    "use strict";
+
+    var i = n(3),
+        r = n(62);
+    i(i.P + i.F * !n(17)([].reduce, !0), "Array", {
+      reduce: function (t) {
+        return r(this, t, arguments.length, arguments[1], !1);
+      }
+    });
+  }, function (t, e, n) {
+    var i = Date.prototype,
+        r = i.toString,
+        o = i.getTime;
+    new Date(NaN) + "" != "Invalid Date" && n(6)(i, "toString", function () {
+      var t = o.call(this);
+      return t === t ? r.call(this) : "Invalid Date";
+    });
+  }, function (t, e, n) {
+    n(4) && "g" != /./g.flags && n(13).f(RegExp.prototype, "flags", {
+      configurable: !0,
+      get: n(39)
+    });
+  }, function (t, e, n) {
+    n(65)("search", 1, function (t, e, n) {
+      return [function (n) {
+        "use strict";
+
+        var i = t(this),
+            r = void 0 == n ? void 0 : n[e];
+        return void 0 !== r ? r.call(n, i) : new RegExp(n)[e](String(i));
+      }, n];
+    });
+  }, function (t, e, n) {
+    "use strict";
+
+    n(94);
+
+    var i = n(2),
+        r = n(39),
+        o = n(4),
+        s = /./.toString,
+        u = function (t) {
+      n(6)(RegExp.prototype, "toString", t, !0);
+    };
+
+    n(7)(function () {
+      return "/a/b" != s.call({
+        source: "a",
+        flags: "b"
+      });
+    }) ? u(function () {
+      var t = i(this);
+      return "/".concat(t.source, "/", "flags" in t ? t.flags : !o && t instanceof RegExp ? r.call(t) : void 0);
+    }) : "toString" != s.name && u(function () {
+      return s.call(this);
+    });
+  }, function (t, e, n) {
+    "use strict";
+
+    n(51)("trim", function (t) {
+      return function () {
+        return t(this, 3);
+      };
+    });
+  }, function (t, e, n) {
+    for (var i = n(34), r = n(47), o = n(6), s = n(0), u = n(8), a = n(15), l = n(1), c = l("iterator"), f = l("toStringTag"), p = a.Array, h = {
+      CSSRuleList: !0,
+      CSSStyleDeclaration: !1,
+      CSSValueList: !1,
+      ClientRectList: !1,
+      DOMRectList: !1,
+      DOMStringList: !1,
+      DOMTokenList: !0,
+      DataTransferItemList: !1,
+      FileList: !1,
+      HTMLAllCollection: !1,
+      HTMLCollection: !1,
+      HTMLFormElement: !1,
+      HTMLSelectElement: !1,
+      MediaList: !0,
+      MimeTypeArray: !1,
+      NamedNodeMap: !1,
+      NodeList: !0,
+      PaintRequestList: !1,
+      Plugin: !1,
+      PluginArray: !1,
+      SVGLengthList: !1,
+      SVGNumberList: !1,
+      SVGPathSegList: !1,
+      SVGPointList: !1,
+      SVGStringList: !1,
+      SVGTransformList: !1,
+      SourceBufferList: !1,
+      StyleSheetList: !0,
+      TextTrackCueList: !1,
+      TextTrackList: !1,
+      TouchList: !1
+    }, d = r(h), v = 0; v < d.length; v++) {
+      var g,
+          y = d[v],
+          m = h[y],
+          b = s[y],
+          _ = b && b.prototype;
+
+      if (_ && (_[c] || u(_, c, p), _[f] || u(_, f, y), a[y] = p, m)) for (g in i) _[g] || o(_, g, i[g], !0);
+    }
+  }, function (t, e) {}, function (t, e) {
+    t.exports = function (t, e, n, i, r, o) {
+      var s,
+          u = t = t || {},
+          a = _typeof(t.default);
+
+      "object" !== a && "function" !== a || (s = t, u = t.default);
+      var l = "function" == typeof u ? u.options : u;
+      e && (l.render = e.render, l.staticRenderFns = e.staticRenderFns, l._compiled = !0), n && (l.functional = !0), r && (l._scopeId = r);
+      var c;
+
+      if (o ? (c = function (t) {
+        t = t || this.$vnode && this.$vnode.ssrContext || this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext, t || "undefined" == typeof __VUE_SSR_CONTEXT__ || (t = __VUE_SSR_CONTEXT__), i && i.call(this, t), t && t._registeredComponents && t._registeredComponents.add(o);
+      }, l._ssrRegister = c) : i && (c = i), c) {
+        var f = l.functional,
+            p = f ? l.render : l.beforeCreate;
+        f ? (l._injectStyles = c, l.render = function (t, e) {
+          return c.call(e), p(t, e);
+        }) : l.beforeCreate = p ? [].concat(p, c) : [c];
+      }
+
+      return {
+        esModule: s,
+        exports: u,
+        options: l
+      };
+    };
+  }, function (t, e, n) {
+    "use strict";
+
+    var i = function () {
+      var t = this,
+          e = t.$createElement,
+          n = t._self._c || e;
+      return n("div", {
+        staticClass: "multiselect",
+        class: {
+          "multiselect--active": t.isOpen,
+          "multiselect--disabled": t.disabled,
+          "multiselect--above": t.isAbove
+        },
+        attrs: {
+          tabindex: t.searchable ? -1 : t.tabindex
+        },
+        on: {
+          focus: function (e) {
+            t.activate();
+          },
+          blur: function (e) {
+            !t.searchable && t.deactivate();
+          },
+          keydown: [function (e) {
+            return "button" in e || !t._k(e.keyCode, "down", 40, e.key, ["Down", "ArrowDown"]) ? e.target !== e.currentTarget ? null : (e.preventDefault(), void t.pointerForward()) : null;
+          }, function (e) {
+            return "button" in e || !t._k(e.keyCode, "up", 38, e.key, ["Up", "ArrowUp"]) ? e.target !== e.currentTarget ? null : (e.preventDefault(), void t.pointerBackward()) : null;
+          }],
+          keypress: function (e) {
+            return "button" in e || !t._k(e.keyCode, "enter", 13, e.key, "Enter") || !t._k(e.keyCode, "tab", 9, e.key, "Tab") ? (e.stopPropagation(), e.target !== e.currentTarget ? null : void t.addPointerElement(e)) : null;
+          },
+          keyup: function (e) {
+            if (!("button" in e) && t._k(e.keyCode, "esc", 27, e.key, "Escape")) return null;
+            t.deactivate();
+          }
+        }
+      }, [t._t("caret", [n("div", {
+        staticClass: "multiselect__select",
+        on: {
+          mousedown: function (e) {
+            e.preventDefault(), e.stopPropagation(), t.toggle();
+          }
+        }
+      })], {
+        toggle: t.toggle
+      }), t._v(" "), t._t("clear", null, {
+        search: t.search
+      }), t._v(" "), n("div", {
+        ref: "tags",
+        staticClass: "multiselect__tags"
+      }, [t._t("selection", [n("div", {
+        directives: [{
+          name: "show",
+          rawName: "v-show",
+          value: t.visibleValues.length > 0,
+          expression: "visibleValues.length > 0"
+        }],
+        staticClass: "multiselect__tags-wrap"
+      }, [t._l(t.visibleValues, function (e, i) {
+        return [t._t("tag", [n("span", {
+          key: i,
+          staticClass: "multiselect__tag"
+        }, [n("span", {
+          domProps: {
+            textContent: t._s(t.getOptionLabel(e))
+          }
+        }), t._v(" "), n("i", {
+          staticClass: "multiselect__tag-icon",
+          attrs: {
+            "aria-hidden": "true",
+            tabindex: "1"
+          },
+          on: {
+            keypress: function (n) {
+              if (!("button" in n) && t._k(n.keyCode, "enter", 13, n.key, "Enter")) return null;
+              n.preventDefault(), t.removeElement(e);
+            },
+            mousedown: function (n) {
+              n.preventDefault(), t.removeElement(e);
+            }
+          }
+        })])], {
+          option: e,
+          search: t.search,
+          remove: t.removeElement
+        })];
+      })], 2), t._v(" "), t.internalValue && t.internalValue.length > t.limit ? [t._t("limit", [n("strong", {
+        staticClass: "multiselect__strong",
+        domProps: {
+          textContent: t._s(t.limitText(t.internalValue.length - t.limit))
+        }
+      })])] : t._e()], {
+        search: t.search,
+        remove: t.removeElement,
+        values: t.visibleValues,
+        isOpen: t.isOpen
+      }), t._v(" "), n("transition", {
+        attrs: {
+          name: "multiselect__loading"
+        }
+      }, [t._t("loading", [n("div", {
+        directives: [{
+          name: "show",
+          rawName: "v-show",
+          value: t.loading,
+          expression: "loading"
+        }],
+        staticClass: "multiselect__spinner"
+      })])], 2), t._v(" "), t.searchable ? n("input", {
+        ref: "search",
+        staticClass: "multiselect__input",
+        style: t.inputStyle,
+        attrs: {
+          name: t.name,
+          id: t.id,
+          type: "text",
+          autocomplete: "nope",
+          placeholder: t.placeholder,
+          disabled: t.disabled,
+          tabindex: t.tabindex
+        },
+        domProps: {
+          value: t.search
+        },
+        on: {
+          input: function (e) {
+            t.updateSearch(e.target.value);
+          },
+          focus: function (e) {
+            e.preventDefault(), t.activate();
+          },
+          blur: function (e) {
+            e.preventDefault(), t.deactivate();
+          },
+          keyup: function (e) {
+            if (!("button" in e) && t._k(e.keyCode, "esc", 27, e.key, "Escape")) return null;
+            t.deactivate();
+          },
+          keydown: [function (e) {
+            if (!("button" in e) && t._k(e.keyCode, "down", 40, e.key, ["Down", "ArrowDown"])) return null;
+            e.preventDefault(), t.pointerForward();
+          }, function (e) {
+            if (!("button" in e) && t._k(e.keyCode, "up", 38, e.key, ["Up", "ArrowUp"])) return null;
+            e.preventDefault(), t.pointerBackward();
+          }, function (e) {
+            if (!("button" in e) && t._k(e.keyCode, "delete", [8, 46], e.key, ["Backspace", "Delete"])) return null;
+            e.stopPropagation(), t.removeLastElement();
+          }],
+          keypress: function (e) {
+            return "button" in e || !t._k(e.keyCode, "enter", 13, e.key, "Enter") ? (e.preventDefault(), e.stopPropagation(), e.target !== e.currentTarget ? null : void t.addPointerElement(e)) : null;
+          }
+        }
+      }) : t._e(), t._v(" "), t.isSingleLabelVisible ? n("span", {
+        staticClass: "multiselect__single",
+        on: {
+          mousedown: function (e) {
+            return e.preventDefault(), t.toggle(e);
+          }
+        }
+      }, [t._t("singleLabel", [[t._v(t._s(t.currentOptionLabel))]], {
+        option: t.singleValue
+      })], 2) : t._e(), t._v(" "), t.isPlaceholderVisible ? n("span", {
+        staticClass: "multiselect__placeholder",
+        on: {
+          mousedown: function (e) {
+            return e.preventDefault(), t.toggle(e);
+          }
+        }
+      }, [t._t("placeholder", [t._v("\n          " + t._s(t.placeholder) + "\n        ")])], 2) : t._e()], 2), t._v(" "), n("transition", {
+        attrs: {
+          name: "multiselect"
+        }
+      }, [n("div", {
+        directives: [{
+          name: "show",
+          rawName: "v-show",
+          value: t.isOpen,
+          expression: "isOpen"
+        }],
+        ref: "list",
+        staticClass: "multiselect__content-wrapper",
+        style: {
+          maxHeight: t.optimizedHeight + "px"
+        },
+        attrs: {
+          tabindex: "-1"
+        },
+        on: {
+          focus: t.activate,
+          mousedown: function (t) {
+            t.preventDefault();
+          }
+        }
+      }, [n("ul", {
+        staticClass: "multiselect__content",
+        style: t.contentStyle
+      }, [t._t("beforeList"), t._v(" "), t.multiple && t.max === t.internalValue.length ? n("li", [n("span", {
+        staticClass: "multiselect__option"
+      }, [t._t("maxElements", [t._v("Maximum of " + t._s(t.max) + " options selected. First remove a selected option to select another.")])], 2)]) : t._e(), t._v(" "), !t.max || t.internalValue.length < t.max ? t._l(t.filteredOptions, function (e, i) {
+        return n("li", {
+          key: i,
+          staticClass: "multiselect__element"
+        }, [e && (e.$isLabel || e.$isDisabled) ? t._e() : n("span", {
+          staticClass: "multiselect__option",
+          class: t.optionHighlight(i, e),
+          attrs: {
+            "data-select": e && e.isTag ? t.tagPlaceholder : t.selectLabelText,
+            "data-selected": t.selectedLabelText,
+            "data-deselect": t.deselectLabelText
+          },
+          on: {
+            click: function (n) {
+              n.stopPropagation(), t.select(e);
+            },
+            mouseenter: function (e) {
+              if (e.target !== e.currentTarget) return null;
+              t.pointerSet(i);
+            }
+          }
+        }, [t._t("option", [n("span", [t._v(t._s(t.getOptionLabel(e)))])], {
+          option: e,
+          search: t.search
+        })], 2), t._v(" "), e && (e.$isLabel || e.$isDisabled) ? n("span", {
+          staticClass: "multiselect__option",
+          class: t.groupHighlight(i, e),
+          attrs: {
+            "data-select": t.groupSelect && t.selectGroupLabelText,
+            "data-deselect": t.groupSelect && t.deselectGroupLabelText
+          },
+          on: {
+            mouseenter: function (e) {
+              if (e.target !== e.currentTarget) return null;
+              t.groupSelect && t.pointerSet(i);
+            },
+            mousedown: function (n) {
+              n.preventDefault(), t.selectGroup(e);
+            }
+          }
+        }, [t._t("option", [n("span", [t._v(t._s(t.getOptionLabel(e)))])], {
+          option: e,
+          search: t.search
+        })], 2) : t._e()]);
+      }) : t._e(), t._v(" "), n("li", {
+        directives: [{
+          name: "show",
+          rawName: "v-show",
+          value: t.showNoResults && 0 === t.filteredOptions.length && t.search && !t.loading,
+          expression: "showNoResults && (filteredOptions.length === 0 && search && !loading)"
+        }]
+      }, [n("span", {
+        staticClass: "multiselect__option"
+      }, [t._t("noResult", [t._v("No elements found. Consider changing the search query.")], {
+        search: t.search
+      })], 2)]), t._v(" "), n("li", {
+        directives: [{
+          name: "show",
+          rawName: "v-show",
+          value: t.showNoOptions && 0 === t.options.length && !t.search && !t.loading,
+          expression: "showNoOptions && (options.length === 0 && !search && !loading)"
+        }]
+      }, [n("span", {
+        staticClass: "multiselect__option"
+      }, [t._t("noOptions", [t._v("List is empty.")])], 2)]), t._v(" "), t._t("afterList")], 2)])])], 2);
+    },
+        r = [],
+        o = {
+      render: i,
+      staticRenderFns: r
+    };
+
+    e.a = o;
+  }]);
+});
+},{}],"../node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
 var Vue // late bind
 var version
 var map = Object.create(null)
@@ -9887,7 +12264,7 @@ function patchScopedSlots (instance) {
   }
 }
 
-},{}],"../src/components/Fieldsets/Private/Private.vue":[function(require,module,exports) {
+},{}],"../src/components/Errors/Errors.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9907,432 +12284,41 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default = {
-  name: "Private",
-  props: ["validate"],
-  methods: {
-    setName: function setName(value) {
-      this.$emit("update-value-name", value);
-    },
-    setSurname: function setSurname(value) {
-      this.$emit("update-value-surname", value);
-    },
-    setLastname: function setLastname(value) {
-      this.$emit("update-value-lastname", value);
-    },
-    setBirth: function setBirth(value) {
-      console.log(new Date(value));
-      this.$emit("update-value-birth");
-    }
-  }
+  name: "Errors",
+  props: ["tests", "value"]
 };
 exports.default = _default;
-        var $7479e5 = exports.default || module.exports;
+        var $249d7b = exports.default || module.exports;
       
-      if (typeof $7479e5 === 'function') {
-        $7479e5 = $7479e5.options;
+      if (typeof $249d7b === 'function') {
+        $249d7b = $249d7b.options;
       }
     
         /* template */
-        Object.assign($7479e5, (function () {
+        Object.assign($249d7b, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("fieldset", { staticClass: "form-section form-section--private" }, [
-    _c("legend", { staticClass: "form-section__title" }, [
-      _vm._v("Личная информация")
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "form-group" }, [
-      _c(
-        "label",
-        {
-          staticClass: "form-label",
-          class: {
-            success: !_vm.validate.surname.$invalid,
-            error: _vm.validate.surname.$invalid
-          }
-        },
-        [
-          _vm._v("\n      Фамилия*\n      "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.trim",
-                value: _vm.validate.surname.$model,
-                expression: "validate.surname.$model",
-                modifiers: { trim: true }
-              }
-            ],
-            staticClass: "form-input",
-            class: {
-              "form-input--error": _vm.validate.surname.$error,
-              "form-input--sucess": !_vm.validate.surname.$invalid
-            },
-            attrs: { name: "surname", placeholder: "Введите фамилию" },
-            domProps: { value: _vm.validate.surname.$model },
-            on: {
-              input: [
-                function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(
-                    _vm.validate.surname,
-                    "$model",
-                    $event.target.value.trim()
-                  )
-                },
-                function($event) {
-                  return _vm.setSurname($event.target.value)
-                }
-              ],
-              blur: function($event) {
-                return _vm.$forceUpdate()
-              }
-            }
-          })
-        ]
-      ),
-      _vm._v(" "),
-      !_vm.validate.surname.required
-        ? _c("small", { staticClass: "form-small error" }, [
-            _vm._v("\n      Поле обязательно для заполнения\n    ")
-          ])
-        : !_vm.validate.surname.minLength
-        ? _c("small", { staticClass: "form-small error" }, [
-            _vm._v(
-              "\n      Минимальное количество символом в этом поле\n      " +
-                _vm._s(_vm.validate.surname.$params.minLength.min) +
-                ".\n    "
-            )
-          ])
-        : _c("small", { staticClass: "form-small success" }, [
-            _vm._v(" Поле заполненно успешно")
-          ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "form-group" }, [
-      _c(
-        "label",
-        {
-          staticClass: "form-label",
-          class: {
-            success: !_vm.validate.name.$invalid,
-            error: _vm.validate.name.$invalid
-          }
-        },
-        [
-          _vm._v("\n      Имя*\n      "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.trim",
-                value: _vm.validate.name.$model,
-                expression: "validate.name.$model",
-                modifiers: { trim: true }
-              }
-            ],
-            staticClass: "form-input",
-            class: {
-              "form-input--error": _vm.validate.name.$error,
-              "form-input--sucess": !_vm.validate.name.$invalid
-            },
-            attrs: { name: "name", placeholder: "Введите имя" },
-            domProps: { value: _vm.validate.name.$model },
-            on: {
-              input: [
-                function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(
-                    _vm.validate.name,
-                    "$model",
-                    $event.target.value.trim()
-                  )
-                },
-                function($event) {
-                  return _vm.setName($event.target.value)
-                }
-              ],
-              blur: function($event) {
-                return _vm.$forceUpdate()
-              }
-            }
-          })
-        ]
-      ),
-      _vm._v(" "),
-      !_vm.validate.name.required
-        ? _c("small", { staticClass: "form-small error" }, [
-            _vm._v("\n      Поле обязательно для заполнения\n    ")
-          ])
-        : !_vm.validate.name.minLength
-        ? _c("small", { staticClass: "form-small error" }, [
-            _vm._v(
-              "\n      Минимальное количество символом в этом поле\n      " +
-                _vm._s(_vm.validate.name.$params.minLength.min) +
-                ".\n    "
-            )
-          ])
-        : _c("small", { staticClass: "form-small success" }, [
-            _vm._v(" Поле заполненно успешно")
-          ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "form-group" }, [
-      _c(
-        "label",
-        {
-          staticClass: "form-label",
-          class: {
-            success: !_vm.validate.lastname.$invalid,
-            error: _vm.validate.lastname.$invalid
-          }
-        },
-        [
-          _vm._v("\n      Отчество\n      "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.trim",
-                value: _vm.validate.lastname.$model,
-                expression: "validate.lastname.$model",
-                modifiers: { trim: true }
-              }
-            ],
-            staticClass: "form-input",
-            class: {
-              "form-input--error": _vm.validate.lastname.$error,
-              "form-input--sucess": !_vm.validate.lastname.$invalid
-            },
-            attrs: { name: "lastname", placeholder: "Введите Отчество" },
-            domProps: { value: _vm.validate.lastname.$model },
-            on: {
-              input: [
-                function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(
-                    _vm.validate.lastname,
-                    "$model",
-                    $event.target.value.trim()
-                  )
-                },
-                function($event) {
-                  return _vm.setLastname($event.target.value)
-                }
-              ],
-              blur: function($event) {
-                return _vm.$forceUpdate()
-              }
-            }
-          })
-        ]
-      ),
-      _vm._v(" "),
-      !_vm.validate.lastname.minLength
-        ? _c("small", { staticClass: "form-small error" }, [
-            _vm._v(
-              "\n      Минимальное количество символом в этом поле\n      " +
-                _vm._s(_vm.validate.name.$params.minLength.min) +
-                ".\n    "
-            )
-          ])
-        : _vm.validate.lastname.$model.length > 0
-        ? _c("small", { staticClass: "form-small success" }, [
-            _vm._v("\n      Поле заполненно успешно")
-          ])
-        : _vm._e()
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "form-group" }, [
-      _c(
-        "label",
-        {
-          staticClass: "form-label",
-          class: {
-            success: !_vm.validate.birth.$invalid,
-            error: _vm.validate.birth.$invalid
-          }
-        },
-        [
-          _vm._v("\n      Дата рождения*\n      "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.trim",
-                value: _vm.validate.birth.$model,
-                expression: "validate.birth.$model",
-                modifiers: { trim: true }
-              }
-            ],
-            staticClass: "form-input",
-            class: {
-              "form-input--error": _vm.validate.birth.$error,
-              "form-input--sucess": !_vm.validate.birth.$invalid
-            },
-            attrs: {
-              type: "date",
-              name: "birth",
-              placeholder: "Введите дату рождения"
-            },
-            domProps: { value: _vm.validate.birth.$model },
-            on: {
-              input: [
-                function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(
-                    _vm.validate.birth,
-                    "$model",
-                    $event.target.value.trim()
-                  )
-                },
-                function($event) {
-                  return _vm.setBirth($event.target.value)
-                }
-              ],
-              blur: function($event) {
-                return _vm.$forceUpdate()
-              }
-            }
-          })
-        ]
-      ),
-      _vm._v(" "),
-      !_vm.validate.birth.required
-        ? _c("small", { staticClass: "form-small error" }, [
-            _vm._v("\n      Поле обязательно для заполнения\n    ")
-          ])
-        : _c("small", { staticClass: "form-small success" }, [
-            _vm._v(" Поле заполненно успешно")
-          ])
-    ])
+  return _c("div", [
+    _vm.tests.required.text && _vm.tests.required.condition
+      ? _c("small", { staticClass: "form-small error" }, [
+          _vm._v("\n    Поле обязательно для заполнения\n  ")
+        ])
+      : _vm.tests.minLength.text && _vm.tests.minLength.condition
+      ? _c("small", { staticClass: "form-small error" }, [
+          _vm._v(
+            "\n    Минимальное количество символом в этом поле\n    " +
+              _vm._s(_vm.tests.minLength.number) +
+              ".\n  "
+          )
+        ])
+      : this.value
+      ? _c("small", { staticClass: "form-small success" }, [
+          _vm._v(" Поле заполненно успешно")
+        ])
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -10355,22 +12341,197 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$7479e5', $7479e5);
+            api.createRecord('$249d7b', $249d7b);
           } else {
-            api.reload('$7479e5', $7479e5);
+            api.reload('$249d7b', $249d7b);
           }
         }
 
         
       }
     })();
-},{"vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../src/components/Fieldsets/Addres/Addres.vue":[function(require,module,exports) {
+},{"vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../src/components/Group.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+var _vueMultiselect = _interopRequireDefault(require("vue-multiselect"));
+
+var _Errors = _interopRequireDefault(require("./Errors/Errors.vue"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -10378,44 +12539,282 @@ exports.default = void 0;
 //
 //
 var _default = {
-  name: 'Addres',
-  props: ["validate"],
+  name: "Group",
+  props: ["validate", "info", "nameElement"],
+  components: {
+    Errors: _Errors.default,
+    Multiselect: _vueMultiselect.default
+  },
+  data: function data() {
+    return {
+      value: null
+    };
+  },
   methods: {
-    setName: function setName(value) {
-      this.$emit('update-value-name', value);
-    },
-    setSurname: function setSurname(value) {
-      this.$emit('update-value-surname', value);
-    }
+    setValue: function setValue() {}
+  },
+  created: function created() {
+    this["set".concat(this.nameElement)] = function (value) {
+      this.$emit("update-".concat(this.nameElement), value);
+    };
+
+    this.setValue = function (value, name) {
+      var nameFunction = "set".concat(name);
+      this[nameFunction](value);
+    };
   }
 };
 exports.default = _default;
-        var $38a75b = exports.default || module.exports;
+        var $56c86f = exports.default || module.exports;
       
-      if (typeof $38a75b === 'function') {
-        $38a75b = $38a75b.options;
+      if (typeof $56c86f === 'function') {
+        $56c86f = $56c86f.options;
       }
     
         /* template */
-        Object.assign($38a75b, (function () {
+        Object.assign($56c86f, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "form-group" },
+    [
+      _vm.info.input.type === "text" ||
+      _vm.info.input.type === "date" ||
+      _vm.info.input.type === "tel"
+        ? _c("div", [
+            _c(
+              "label",
+              {
+                staticClass: "form-label",
+                class: {
+                  success: !_vm.validate.$invalid && _vm.validate.$model,
+                  error: _vm.validate.$invalid
+                }
+              },
+              [
+                _vm._v("\n      " + _vm._s(_vm.info.label.text) + "\n      "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model.trim",
+                      value: _vm.validate.$model,
+                      expression: "validate.$model",
+                      modifiers: { trim: true }
+                    }
+                  ],
+                  staticClass: "form-input",
+                  class: {
+                    "form-input--error": _vm.validate.$error,
+                    "form-input--sucess": !_vm.validate.$invalid
+                  },
+                  attrs: {
+                    type: _vm.info.input.type,
+                    name: _vm.info.input.name,
+                    placeholder: _vm.info.input.placeholder
+                  },
+                  domProps: { value: _vm.validate.$model },
+                  on: {
+                    input: [
+                      function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.validate,
+                          "$model",
+                          $event.target.value.trim()
+                        )
+                      },
+                      function($event) {
+                        return _vm.setValue(
+                          $event.target.value,
+                          _vm.nameElement
+                        )
+                      }
+                    ],
+                    blur: function($event) {
+                      return _vm.$forceUpdate()
+                    }
+                  }
+                })
+              ]
+            )
+          ])
+        : _vm.info.input.type === "radio"
+        ? _c("div", [
+            _c(
+              "h2",
+              {
+                staticClass: "form__label",
+                class: {
+                  success: !_vm.validate.$invalid && _vm.validate.$model,
+                  error: _vm.validate.$invalid
+                }
+              },
+              [_vm._v("\n      " + _vm._s(_vm.info.label.text) + "\n    ")]
+            ),
+            _vm._v(" "),
+            _c("label", { staticClass: "form__label-radio" }, [
+              _vm._v("\n      М\n      "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model.trim",
+                    value: _vm.validate.$model,
+                    expression: "validate.$model",
+                    modifiers: { trim: true }
+                  }
+                ],
+                staticClass: "form-input",
+                attrs: {
+                  type: _vm.info.input.type,
+                  name: _vm.info.input.name,
+                  value: "man"
+                },
+                domProps: { value: _vm.validate.$model },
+                on: {
+                  input: [
+                    function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.validate,
+                        "$model",
+                        $event.target.value.trim()
+                      )
+                    },
+                    function($event) {
+                      return _vm.setValue($event.target.value)
+                    }
+                  ],
+                  blur: function($event) {
+                    return _vm.$forceUpdate()
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("span")
+            ]),
+            _vm._v(" "),
+            _c("label", { staticClass: "form__label-radio" }, [
+              _vm._v("\n      Ж\n      "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model.trim",
+                    value: _vm.validate.$model,
+                    expression: "validate.$model",
+                    modifiers: { trim: true }
+                  }
+                ],
+                staticClass: "form-input",
+                attrs: {
+                  type: _vm.info.input.type,
+                  name: _vm.info.input.name,
+                  value: "woman"
+                },
+                domProps: { value: _vm.validate.$model },
+                on: {
+                  input: [
+                    function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.validate,
+                        "$model",
+                        $event.target.value.trim()
+                      )
+                    },
+                    function($event) {
+                      return _vm.setValue($event.target.value)
+                    }
+                  ],
+                  blur: function($event) {
+                    return _vm.$forceUpdate()
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("span")
+            ])
+          ])
+        : _vm.info.input.type === "select"
+        ? _c(
+            "div",
+            [
+              _c(
+                "label",
+                {
+                  staticClass: "form-label",
+                  class: {
+                    success: !_vm.validate.$invalid && _vm.validate.$model,
+                    error: _vm.validate.$invalid
+                  }
+                },
+                [_vm._v("\n      " + _vm._s(_vm.info.label.text) + "\n    ")]
+              ),
+              _vm._v(" "),
+              _c("multiselect", {
+                staticClass: "form-input",
+                attrs: {
+                  multiple: _vm.info.input.multiple
+                    ? _vm.info.input.multiple
+                    : false,
+                  options: _vm.info.input.value,
+                  searchable: false,
+                  "close-on-select": _vm.info.input.multiple ? false : true,
+                  "show-labels": true,
+                  placeholder: _vm.info.input.placeholder
+                },
+                on: {
+                  select: function(value) {
+                    return _vm.setValue(value, _vm.nameElement)
+                  }
+                },
+                model: {
+                  value: _vm.validate.$model,
+                  callback: function($$v) {
+                    _vm.$set(_vm.validate, "$model", $$v)
+                  },
+                  expression: "validate.$model"
+                }
+              })
+            ],
+            1
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _c("Errors", {
+        attrs: {
+          value: _vm.validate.$model,
+          tests: {
+            required: {
+              text: _vm.info.tests.text.required,
+              condition: !this.validate.required
+            },
+            minLength: {
+              text: _vm.info.tests.text.minLength,
+              condition: !this.validate.minLength,
+              number: _vm.info.tests.text.minLength
+                ? this.validate.$params.minLength.min
+                : null
+            }
+          }
+        }
+      })
+    ],
+    1
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "section",
-      { staticClass: "form-section form-section--private" },
-      [_c("legend", { staticClass: "form-section__title" }, [_vm._v("Адрес")])]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
           return {
@@ -10435,100 +12834,20 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$38a75b', $38a75b);
+            api.createRecord('$56c86f', $56c86f);
           } else {
-            api.reload('$38a75b', $38a75b);
+            api.reload('$56c86f', $56c86f);
           }
         }
 
         
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
       }
     })();
-},{"vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../src/components/Fieldsets/Pasport/Pasport.vue":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-//
-//
-//
-//
-//
-//
-var _default = {
-  name: "Pasport",
-  props: ["validate"],
-  methods: {
-    setName: function setName(value) {
-      this.$emit('update-value-name', value);
-    },
-    setSurname: function setSurname(value) {
-      this.$emit('update-value-surname', value);
-    }
-  }
-};
-exports.default = _default;
-        var $b946d0 = exports.default || module.exports;
-      
-      if (typeof $b946d0 === 'function') {
-        $b946d0 = $b946d0.options;
-      }
-    
-        /* template */
-        Object.assign($b946d0, (function () {
-          var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "section",
-      { staticClass: "form-section form-section--private" },
-      [
-        _c("legend", { staticClass: "form-section__title" }, [
-          _vm._v("Паспорт")
-        ])
-      ]
-    )
-  }
-]
-render._withStripped = true
-
-          return {
-            render: render,
-            staticRenderFns: staticRenderFns,
-            _compiled: true,
-            _scopeId: null,
-            functional: undefined
-          };
-        })());
-      
-    /* hot reload */
-    (function () {
-      if (module.hot) {
-        var api = require('vue-hot-reload-api');
-        api.install(require('vue'));
-        if (api.compatible) {
-          module.hot.accept();
-          if (!module.hot.data) {
-            api.createRecord('$b946d0', $b946d0);
-          } else {
-            api.reload('$b946d0', $b946d0);
-          }
-        }
-
-        
-      }
-    })();
-},{"vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../node_modules/vuelidate/lib/withParamsBrowser.js":[function(require,module,exports) {
+},{"vue-multiselect":"../node_modules/vue-multiselect/dist/vue-multiselect.min.js","./Errors/Errors.vue":"../src/components/Errors/Errors.vue","_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../node_modules/vuelidate/lib/withParamsBrowser.js":[function(require,module,exports) {
 var global = arguments[3];
 "use strict";
 
@@ -11312,129 +13631,486 @@ function _interopRequireDefault(obj) {
     default: obj
   };
 }
-},{"./alpha":"../node_modules/vuelidate/lib/validators/alpha.js","./alphaNum":"../node_modules/vuelidate/lib/validators/alphaNum.js","./numeric":"../node_modules/vuelidate/lib/validators/numeric.js","./between":"../node_modules/vuelidate/lib/validators/between.js","./email":"../node_modules/vuelidate/lib/validators/email.js","./ipAddress":"../node_modules/vuelidate/lib/validators/ipAddress.js","./macAddress":"../node_modules/vuelidate/lib/validators/macAddress.js","./maxLength":"../node_modules/vuelidate/lib/validators/maxLength.js","./minLength":"../node_modules/vuelidate/lib/validators/minLength.js","./required":"../node_modules/vuelidate/lib/validators/required.js","./requiredIf":"../node_modules/vuelidate/lib/validators/requiredIf.js","./requiredUnless":"../node_modules/vuelidate/lib/validators/requiredUnless.js","./sameAs":"../node_modules/vuelidate/lib/validators/sameAs.js","./url":"../node_modules/vuelidate/lib/validators/url.js","./or":"../node_modules/vuelidate/lib/validators/or.js","./and":"../node_modules/vuelidate/lib/validators/and.js","./not":"../node_modules/vuelidate/lib/validators/not.js","./minValue":"../node_modules/vuelidate/lib/validators/minValue.js","./maxValue":"../node_modules/vuelidate/lib/validators/maxValue.js","./integer":"../node_modules/vuelidate/lib/validators/integer.js","./decimal":"../node_modules/vuelidate/lib/validators/decimal.js","./common":"../node_modules/vuelidate/lib/validators/common.js"}],"../src/utils/index.js":[function(require,module,exports) {
+},{"./alpha":"../node_modules/vuelidate/lib/validators/alpha.js","./alphaNum":"../node_modules/vuelidate/lib/validators/alphaNum.js","./numeric":"../node_modules/vuelidate/lib/validators/numeric.js","./between":"../node_modules/vuelidate/lib/validators/between.js","./email":"../node_modules/vuelidate/lib/validators/email.js","./ipAddress":"../node_modules/vuelidate/lib/validators/ipAddress.js","./macAddress":"../node_modules/vuelidate/lib/validators/macAddress.js","./maxLength":"../node_modules/vuelidate/lib/validators/maxLength.js","./minLength":"../node_modules/vuelidate/lib/validators/minLength.js","./required":"../node_modules/vuelidate/lib/validators/required.js","./requiredIf":"../node_modules/vuelidate/lib/validators/requiredIf.js","./requiredUnless":"../node_modules/vuelidate/lib/validators/requiredUnless.js","./sameAs":"../node_modules/vuelidate/lib/validators/sameAs.js","./url":"../node_modules/vuelidate/lib/validators/url.js","./or":"../node_modules/vuelidate/lib/validators/or.js","./and":"../node_modules/vuelidate/lib/validators/and.js","./not":"../node_modules/vuelidate/lib/validators/not.js","./minValue":"../node_modules/vuelidate/lib/validators/minValue.js","./maxValue":"../node_modules/vuelidate/lib/validators/maxValue.js","./integer":"../node_modules/vuelidate/lib/validators/integer.js","./decimal":"../node_modules/vuelidate/lib/validators/decimal.js","./common":"../node_modules/vuelidate/lib/validators/common.js"}],"../src/data/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.checkValue = exports.Vue__validationObjectPrivate = void 0;
+exports.Vue__validationObjectPrivate = exports.INFO = exports.dataRoot = exports.nameElement = exports.MIN = void 0;
 
 var _validators = require("vuelidate/lib/validators");
 
-// Vue
-var Vue__validationObjectPrivate = {
+var MIN = {
+  text: 2,
+  phone: 12,
+  index: 6,
+  house: 4,
+  pasport: {
+    series: 4,
+    number: 6
+  }
+};
+exports.MIN = MIN;
+var textError = {
+  required: "Поле обязательно для заполнения",
+  minLength: "Минимальное количество символом в этом поле "
+};
+var nameElement = {
+  name: 'name',
+  surname: 'surname',
+  lastname: 'lastname',
+  birth: 'birth',
+  phone: 'phone',
+  gender: 'gender',
+  clients: 'clients',
+  doctor: 'doctor',
+  index: 'index',
+  country: 'country',
+  region: 'region',
+  city: 'city',
+  street: 'street',
+  house: 'house',
+  document: 'document',
+  pasportSeries: 'pasportSeries',
+  pasportNumber: 'pasportNumber',
+  pasportOrganization: 'pasportOrganization',
+  pasportDate: 'pasportDate'
+};
+exports.nameElement = nameElement;
+var startInfo = {
   // Имя
   name: {
-    required: _validators.required,
-    minLength: (0, _validators.minLength)(4)
+    startValue: "",
+    validate: {
+      required: _validators.required,
+      minLength: (0, _validators.minLength)(MIN.text)
+    },
+    information: {
+      label: {
+        text: "Имя*"
+      },
+      input: {
+        type: "text",
+        name: "name",
+        placeholder: "Введите имя"
+      },
+      tests: {
+        text: {
+          required: textError.required,
+          minLength: textError.minLength
+        }
+      }
+    }
   },
   // Фамилия
   surname: {
-    required: _validators.required,
-    minLength: (0, _validators.minLength)(4)
+    startValue: "",
+    validate: {
+      required: _validators.required,
+      minLength: (0, _validators.minLength)(MIN.text)
+    },
+    information: {
+      label: {
+        text: "Фамилия*"
+      },
+      input: {
+        type: "text",
+        name: "surname",
+        placeholder: "Введите фамилию"
+      },
+      tests: {
+        text: {
+          required: textError.required,
+          minLength: textError.minLength
+        }
+      }
+    }
   },
   // Отчество
   lastname: {
-    minLength: (0, _validators.minLength)(4)
-  },
-  birth: {
-    required: _validators.required
-  }
-}; // JS
-
-exports.Vue__validationObjectPrivate = Vue__validationObjectPrivate;
-
-var checkValue = function checkValue(value, nameElement) {
-  var regXP;
-
-  switch (nameElement) {
-    case 'name':
-    case 'surname':
-    case 'lastname':
-      regXP = /\W/i;
-  }
-
-  var checkValue = '';
-
-  for (var i = 0; i < value.length; i++) {
-    if (regXP.test(value[i])) {
-      checkValue += value[i];
-    }
-  }
-
-  return checkValue;
-};
-
-exports.checkValue = checkValue;
-},{"vuelidate/lib/validators":"../node_modules/vuelidate/lib/validators/index.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
+    startValue: "",
+    validate: {
+      minLength: (0, _validators.minLength)(MIN.text)
+    },
+    information: {
+      label: {
+        text: "Отчество"
+      },
+      input: {
+        type: "text",
+        name: "lastname",
+        placeholder: "Введите отчество"
+      },
+      tests: {
+        text: {
+          minLength: textError.minLength
+        }
       }
     }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../src/App.vue":[function(require,module,exports) {
+  },
+  // Дата рождения
+  birth: {
+    startValue: "",
+    validate: {
+      required: _validators.required
+    },
+    information: {
+      label: {
+        text: "Дата рождения*"
+      },
+      input: {
+        type: "date",
+        name: "birth",
+        placeholder: "Введите дату рождения"
+      },
+      tests: {
+        text: {
+          required: textError.required
+        }
+      }
+    }
+  },
+  // Телефон
+  phone: {
+    startValue: "+7",
+    validate: {
+      required: _validators.required,
+      minLength: (0, _validators.minLength)(MIN.phone)
+    },
+    information: {
+      label: {
+        text: "Мобильный телефон*"
+      },
+      input: {
+        type: "tel",
+        name: "phone",
+        placeholder: "Введите номер мобильного телефона"
+      },
+      tests: {
+        text: {
+          required: textError.required,
+          minLength: textError.minLength
+        }
+      }
+    }
+  },
+  // Пол
+  gender: {
+    startValue: "",
+    validate: {},
+    information: {
+      label: {
+        text: "Пол"
+      },
+      input: {
+        type: "radio",
+        name: "gender"
+      },
+      tests: {
+        text: {}
+      }
+    }
+  },
+  // Клиенты
+  clients: {
+    startValue: [],
+    validate: {
+      required: _validators.required
+    },
+    information: {
+      label: {
+        text: "Группа клиентов*"
+      },
+      input: {
+        type: "select",
+        multiple: true,
+        name: "clients",
+        placeholder: "Выберите группу клиентов",
+        value: ["VIP", "Проблемные", "ОМС"]
+      },
+      tests: {
+        text: {
+          required: textError.required
+        }
+      }
+    }
+  },
+  // Лечащий доктор
+  doctor: {
+    startValue: "",
+    validate: {},
+    information: {
+      label: {
+        text: "Лечащий врач"
+      },
+      input: {
+        type: "select",
+        multiple: false,
+        name: "doctor",
+        placeholder: "Выберите лечящего врача",
+        value: ["Иванов", "Захаров", "Чернышева"]
+      },
+      tests: {
+        text: {}
+      }
+    }
+  },
+  // Индекс проживания
+  index: {
+    startValue: "",
+    validate: {
+      minLength: (0, _validators.minLength)(MIN.index)
+    },
+    information: {
+      label: {
+        text: "Индекс"
+      },
+      input: {
+        type: "text",
+        name: "index",
+        placeholder: "Введите индекс"
+      },
+      tests: {
+        text: {
+          minLength: textError.minLength
+        }
+      }
+    }
+  },
+  // Страна
+  country: {
+    startValue: "",
+    validate: {
+      minLength: (0, _validators.minLength)(MIN.text)
+    },
+    information: {
+      label: {
+        text: "Страна"
+      },
+      input: {
+        type: "text",
+        name: "country",
+        placeholder: "Введите страну проживания"
+      },
+      tests: {
+        text: {
+          minLength: textError.minLength
+        }
+      }
+    }
+  },
+  // Область
+  region: {
+    startValue: "",
+    validate: {
+      minLength: (0, _validators.minLength)(MIN.text)
+    },
+    information: {
+      label: {
+        text: "Область"
+      },
+      input: {
+        type: "text",
+        name: "region",
+        placeholder: "Введите область проживания"
+      },
+      tests: {
+        text: {
+          minLength: textError.minLength
+        }
+      }
+    }
+  },
+  // Город
+  city: {
+    startValue: "",
+    validate: {
+      required: _validators.required,
+      minLength: (0, _validators.minLength)(MIN.text)
+    },
+    information: {
+      label: {
+        text: "Город*"
+      },
+      input: {
+        type: "text",
+        name: "city",
+        placeholder: "Введите город проживания"
+      },
+      tests: {
+        text: {
+          required: textError.required,
+          minLength: textError.minLength
+        }
+      }
+    }
+  },
+  // Улица
+  street: {
+    startValue: "",
+    validate: {
+      minLength: (0, _validators.minLength)(MIN.text)
+    },
+    information: {
+      label: {
+        text: "Улица"
+      },
+      input: {
+        type: "text",
+        name: "street",
+        placeholder: "Введите улицу проживания"
+      },
+      tests: {
+        text: {
+          minLength: textError.minLength
+        }
+      }
+    }
+  },
+  // Дом
+  house: {
+    startValue: "",
+    validate: {
+      minLength: (0, _validators.minLength)(MIN.house)
+    },
+    information: {
+      label: {
+        text: "Дом"
+      },
+      input: {
+        type: "text",
+        name: "house",
+        placeholder: "Введите номер дома"
+      },
+      tests: {
+        text: {
+          minLength: textError.minLength
+        }
+      }
+    }
+  },
+  // Тип документа
+  document: {
+    startValue: "",
+    validate: {
+      required: _validators.required
+    },
+    information: {
+      label: {
+        text: "Тип документа*"
+      },
+      input: {
+        type: "select",
+        multiple: false,
+        name: "document",
+        placeholder: "Выберите тип документа",
+        value: ["Паспорт", "Свидетельство о рождении", "Водительское удостоверение"]
+      },
+      tests: {
+        text: {
+          required: textError.required
+        }
+      }
+    }
+  },
+  // Серия
+  pasportSeries: {
+    startValue: "",
+    validate: {
+      minLength: (0, _validators.minLength)(MIN.pasport.series)
+    },
+    information: {
+      label: {
+        text: "Серия"
+      },
+      input: {
+        type: "text",
+        name: "pasportSeries",
+        placeholder: "Введите серию документа"
+      },
+      tests: {
+        text: {
+          minLength: textError.minLength
+        }
+      }
+    }
+  },
+  // Номер
+  pasportNumber: {
+    startValue: "",
+    validate: {
+      minLength: (0, _validators.minLength)(MIN.pasport.number)
+    },
+    information: {
+      label: {
+        text: "Номер"
+      },
+      input: {
+        type: "text",
+        name: "pasportNumber",
+        placeholder: "Введите номер документа"
+      },
+      tests: {
+        text: {
+          minLength: textError.minLength
+        }
+      }
+    }
+  },
+  // Кем выдан
+  pasportOrganization: {
+    startValue: "",
+    validate: {
+      minLength: (0, _validators.minLength)(MIN.text)
+    },
+    information: {
+      label: {
+        text: "Кем выдан"
+      },
+      input: {
+        type: "text",
+        name: "pasportNumber",
+        placeholder: "Введите кем выдан документ"
+      },
+      tests: {
+        text: {
+          minLength: textError.minLength
+        }
+      }
+    }
+  },
+  // Дата выдачи
+  pasportDate: {
+    startValue: "",
+    validate: {},
+    information: {
+      label: {
+        text: "Когда выдан"
+      },
+      input: {
+        type: "date",
+        name: "pasportDate",
+        placeholder: "Введите кем выдан документ"
+      },
+      tests: {
+        text: {}
+      }
+    }
+  }
+};
+var dataRoot = {};
+exports.dataRoot = dataRoot;
+var INFO = {};
+exports.INFO = INFO;
+var Vue__validationObjectPrivate = {};
+exports.Vue__validationObjectPrivate = Vue__validationObjectPrivate;
+Object.values(nameElement).forEach(function (element) {
+  dataRoot[element] = startInfo[element].startValue;
+  INFO[element] = startInfo[element].information;
+  Vue__validationObjectPrivate[element] = startInfo[element].validate;
+});
+},{"vuelidate/lib/validators":"../node_modules/vuelidate/lib/validators/index.js"}],"../src/components/Fieldsets/Private/Private.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11442,13 +14118,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _Private = _interopRequireDefault(require("./components/Fieldsets/Private/Private.vue"));
+var _Group = _interopRequireDefault(require("../../Group.vue"));
 
-var _Addres = _interopRequireDefault(require("./components/Fieldsets/Addres/Addres.vue"));
-
-var _Pasport = _interopRequireDefault(require("./components/Fieldsets/Pasport/Pasport.vue"));
-
-var _index = require("./utils/index.js");
+var _index = require("../../../data/index.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11478,6 +14150,713 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  name: "Private",
+  props: ["validate"],
+  components: {
+    Group: _Group.default
+  },
+  data: function data() {
+    return {
+      nameInfo: _index.INFO.name,
+      surnameInfo: _index.INFO.surname,
+      lastnameInfo: _index.INFO.lastname,
+      birthInfo: _index.INFO.birth,
+      phoneInfo: _index.INFO.phone,
+      genderInfo: _index.INFO.gender,
+      clientsInfo: _index.INFO.clients,
+      doctorInfo: _index.INFO.doctor
+    };
+  },
+  methods: {
+    setName: function setName(value) {
+      this.$emit("update-value-name", value);
+    },
+    setSurname: function setSurname(value) {
+      this.$emit("update-value-surname", value);
+    },
+    setLastname: function setLastname(value) {
+      this.$emit("update-value-lastname", value);
+    },
+    setBirth: function setBirth() {
+      this.$emit("update-value-birth");
+    },
+    setPhone: function setPhone(value) {
+      this.$emit("update-value-phone", value);
+    },
+    setGender: function setGender() {
+      this.$emit("update-value-gender");
+    },
+    setClients: function setClients() {
+      this.$emit("update-value-clients");
+    },
+    setDoctor: function setDoctor() {
+      this.$emit("update-value-doctor");
+    },
+    setDispatch: function setDispatch(ev) {
+      this.$emit("update-value-dispatch", ev.target.checked);
+    }
+  }
+};
+exports.default = _default;
+        var $7479e5 = exports.default || module.exports;
+      
+      if (typeof $7479e5 === 'function') {
+        $7479e5 = $7479e5.options;
+      }
+    
+        /* template */
+        Object.assign($7479e5, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "fieldset",
+    { staticClass: "form-section form-section--private" },
+    [
+      _c("legend", { staticClass: "form-section__title" }, [
+        _vm._v("Личная информация")
+      ]),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.surname,
+          info: _vm.surnameInfo,
+          nameElement: "surname"
+        },
+        on: { "update-surname": _vm.setSurname }
+      }),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.name,
+          info: _vm.nameInfo,
+          nameElement: "name"
+        },
+        on: { "update-name": _vm.setName }
+      }),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.lastname,
+          info: _vm.lastnameInfo,
+          nameElement: "lastname"
+        },
+        on: { "update-lastname": _vm.setLastname }
+      }),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.birth,
+          info: _vm.birthInfo,
+          nameElement: "birth"
+        },
+        on: { "update-birth": _vm.setBirth }
+      }),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.phone,
+          info: _vm.phoneInfo,
+          nameElement: "phone"
+        },
+        on: { "update-phone": _vm.setPhone }
+      }),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.gender,
+          info: _vm.genderInfo,
+          nameElement: "gender"
+        },
+        on: { "update-gender": _vm.setGender }
+      }),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.clients,
+          info: _vm.clientsInfo,
+          nameElement: "clients"
+        },
+        on: { "update-clients": _vm.setClients }
+      }),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.doctor,
+          info: _vm.doctorInfo,
+          nameElement: "doctor"
+        },
+        on: { "update-doctor": _vm.setDoctor }
+      }),
+      _vm._v(" "),
+      _c("label", { staticClass: "form__label-checkbox" }, [
+        _vm._v("\n    Не отправлять\n    "),
+        _c("input", {
+          attrs: { type: "checkbox" },
+          on: { input: _vm.setDispatch }
+        }),
+        _vm._v(" "),
+        _c("div")
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$7479e5', $7479e5);
+          } else {
+            api.reload('$7479e5', $7479e5);
+          }
+        }
+
+        
+      }
+    })();
+},{"../../Group.vue":"../src/components/Group.vue","../../../data/index.js":"../src/data/index.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../src/components/Fieldsets/Addres/Addres.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _Group = _interopRequireDefault(require("../../Group.vue"));
+
+var _index = require("../../../data/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  name: "Addres",
+  props: ["validate"],
+  components: {
+    Group: _Group.default
+  },
+  data: function data() {
+    return {
+      indexInfo: _index.INFO.index,
+      countryInfo: _index.INFO.country,
+      regionInfo: _index.INFO.region,
+      cityInfo: _index.INFO.city,
+      streetInfo: _index.INFO.street,
+      houseInfo: _index.INFO.house
+    };
+  },
+  methods: {
+    setIndex: function setIndex(value) {
+      this.$emit("update-value-index", value);
+    },
+    setCountry: function setCountry(value) {
+      this.$emit("update-value-country", value);
+    },
+    setRegion: function setRegion(value) {
+      this.$emit("update-value-region", value);
+    },
+    setCity: function setCity(value) {
+      this.$emit("update-value-city", value);
+    },
+    setStreet: function setStreet(value) {
+      this.$emit("update-value-street", value);
+    },
+    setHouse: function setHouse(value) {
+      this.$emit("update-value-house", value);
+    }
+  }
+};
+exports.default = _default;
+        var $38a75b = exports.default || module.exports;
+      
+      if (typeof $38a75b === 'function') {
+        $38a75b = $38a75b.options;
+      }
+    
+        /* template */
+        Object.assign($38a75b, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "section",
+    { staticClass: "form-section form-section--private" },
+    [
+      _c("legend", { staticClass: "form-section__title" }, [_vm._v("Адрес")]),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.index,
+          info: _vm.indexInfo,
+          nameElement: "index"
+        },
+        on: { "update-index": _vm.setIndex }
+      }),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.country,
+          info: _vm.countryInfo,
+          nameElement: "country"
+        },
+        on: { "update-country": _vm.setCountry }
+      }),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.region,
+          info: _vm.regionInfo,
+          nameElement: "region"
+        },
+        on: { "update-region": _vm.setRegion }
+      }),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.city,
+          info: _vm.cityInfo,
+          nameElement: "city"
+        },
+        on: { "update-city": _vm.setCity }
+      }),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.street,
+          info: _vm.streetInfo,
+          nameElement: "street"
+        },
+        on: { "update-street": _vm.setStreet }
+      }),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.house,
+          info: _vm.houseInfo,
+          nameElement: "house"
+        },
+        on: { "update-house": _vm.setHouse }
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$38a75b', $38a75b);
+          } else {
+            api.reload('$38a75b', $38a75b);
+          }
+        }
+
+        
+      }
+    })();
+},{"../../Group.vue":"../src/components/Group.vue","../../../data/index.js":"../src/data/index.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../src/components/Fieldsets/Pasport/Pasport.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _Group = _interopRequireDefault(require("../../Group.vue"));
+
+var _index = require("../../../data/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  name: "Pasport",
+  props: ["validate"],
+  components: {
+    Group: _Group.default
+  },
+  data: function data() {
+    return {
+      documentInfo: _index.INFO.document,
+      pasportSeriesInfo: _index.INFO.pasportSeries,
+      pasportNumberInfo: _index.INFO.pasportNumber,
+      pasportOranizationInfo: _index.INFO.pasportOrganization,
+      pasportDateInfo: _index.INFO.pasportDate
+    };
+  },
+  methods: {
+    setDocument: function setDocument(value) {
+      this.$emit("update-value-document", value);
+    },
+    setPasportSeries: function setPasportSeries(value) {
+      this.$emit("update-value-pasport_series", value);
+    },
+    setPasportNumber: function setPasportNumber(value) {
+      this.$emit("update-value-pasport_number", value);
+    },
+    setPasportOrganization: function setPasportOrganization(value) {
+      this.$emit("update-value-pasport_organization", value);
+    },
+    setPasportDate: function setPasportDate(value) {
+      this.$emit("update-value-pasport_date", value);
+    }
+  }
+};
+exports.default = _default;
+        var $b946d0 = exports.default || module.exports;
+      
+      if (typeof $b946d0 === 'function') {
+        $b946d0 = $b946d0.options;
+      }
+    
+        /* template */
+        Object.assign($b946d0, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "section",
+    { staticClass: "form-section form-section--private" },
+    [
+      _c("legend", { staticClass: "form-section__title" }, [_vm._v("Паспорт")]),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.document,
+          info: _vm.documentInfo,
+          nameElement: "document"
+        },
+        on: { "update-document": _vm.setDocument }
+      }),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.pasportSeries,
+          info: _vm.pasportSeriesInfo,
+          nameElement: "pasport_series"
+        },
+        on: { "update-pasport_series": _vm.setPasportSeries }
+      }),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.pasportNumber,
+          info: _vm.pasportNumberInfo,
+          nameElement: "pasport_number"
+        },
+        on: { "update-pasport_number": _vm.setPasportNumber }
+      }),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.pasportOrganization,
+          info: _vm.pasportOranizationInfo,
+          nameElement: "pasport_organization"
+        },
+        on: { "update-pasport_organization": _vm.setPasportOrganization }
+      }),
+      _vm._v(" "),
+      _c("Group", {
+        attrs: {
+          validate: _vm.validate.pasportDate,
+          info: _vm.pasportDateInfo,
+          nameElement: "pasport_date"
+        },
+        on: { "update-pasport_date": _vm.setPasportDate }
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$b946d0', $b946d0);
+          } else {
+            api.reload('$b946d0', $b946d0);
+          }
+        }
+
+        
+      }
+    })();
+},{"../../Group.vue":"../src/components/Group.vue","../../../data/index.js":"../src/data/index.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../src/utils/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.checkValue = void 0;
+
+var _index = require("../data/index.js");
+
+var checkValue = function checkValue(value, nameElement) {
+  var checkValue = '';
+  var regXP;
+
+  switch (nameElement) {
+    case 'text':
+      regXP = /\W/i;
+      break;
+
+    case 'phone':
+    case 'index':
+    case 'house':
+    case 'pasport-series':
+    case 'pasport-number':
+      regXP = /\d/i;
+      break;
+
+    default:
+      return null;
+  }
+
+  for (var i = 0; i < value.length; i++) {
+    if (i == 0 && nameElement === 'phone') {
+      checkValue += "+";
+    }
+
+    if (regXP.test(value[i]) && nameElement != 'date') {
+      switch (nameElement) {
+        case 'phone':
+        case 'index':
+        case 'house':
+          if (i < _index.MIN[nameElement]) checkValue += value[i];
+          break;
+
+        case 'pasport-series':
+          if (i < _index.MIN.pasport.series) checkValue += value[i];
+          break;
+
+        case 'pasport-number':
+          if (i < _index.MIN.pasport.number) checkValue += value[i];
+          break;
+
+        default:
+          checkValue += value[i];
+      }
+    }
+  } // Нельзя удалить первую цифру
+
+
+  if (value.length == 1 && nameElement === 'phone') {
+    checkValue = '+7';
+  }
+
+  return checkValue;
+};
+
+exports.checkValue = checkValue;
+},{"../data/index.js":"../src/data/index.js"}],"../src/App.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _Private = _interopRequireDefault(require("./components/Fieldsets/Private/Private.vue"));
+
+var _Addres = _interopRequireDefault(require("./components/Fieldsets/Addres/Addres.vue"));
+
+var _Pasport = _interopRequireDefault(require("./components/Fieldsets/Pasport/Pasport.vue"));
+
+var _index = require("./utils/index.js");
+
+var _index2 = require("./data/index");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var _default = {
   name: "App",
   components: {
@@ -11486,33 +14865,99 @@ var _default = {
     Pasport: _Pasport.default
   },
   data: function data() {
-    return {
-      name: "",
-      surname: "",
-      lastname: "",
-      birth: ""
-    };
+    return _objectSpread(_objectSpread({}, _index2.dataRoot), {}, {
+      dispatch: false
+    });
   },
-  validations: _index.Vue__validationObjectPrivate,
+  validations: _index2.Vue__validationObjectPrivate,
   methods: {
+    openModal: function openModal(valid) {
+      if (!valid.$invalid) {}
+
+      var modal = document.querySelector(".modal");
+      var overlay = document.querySelector(".overlay");
+      modal.innerHTML = valid.$invalid ? 'Вы не заполнели все обязательные поля' : 'Клиент успешно создан';
+      modal.innerHTML += this.dispatch ? ' ( данные будут отправлены )' : ' ( данные отправлены не будут )';
+      modal.classList.add("active", valid.$invalid ? 'error' : 'good');
+      overlay.classList.add("active");
+      setTimeout(function () {
+        modal.classList.remove("active");
+        overlay.classList.remove("active");
+      }, 2000);
+    },
     setName: function setName(value) {
-      this.name = (0, _index.checkValue)(value, "name");
+      this.name = (0, _index.checkValue)(value, "text");
       this.$v.name.$touch();
     },
     setSurname: function setSurname(value) {
-      this.surname = (0, _index.checkValue)(value, "surname");
+      this.surname = (0, _index.checkValue)(value, "text");
       this.$v.surname.$touch();
     },
     setLastname: function setLastname(value) {
-      this.lastname = (0, _index.checkValue)(value, "lastname");
+      this.lastname = (0, _index.checkValue)(value, "text");
       this.$v.lastname.$touch();
     },
     setBirth: function setBirth() {
-      this.$v.lastname.$touch();
+      this.$v.birth.$touch();
+    },
+    setPhone: function setPhone(value) {
+      this.phone = (0, _index.checkValue)(value, "phone");
+      this.$v.birth.$touch();
+    },
+    setGender: function setGender() {
+      this.$v.gender.$touch();
+    },
+    setClients: function setClients() {
+      this.$v.clients.$touch();
+    },
+    setDoctor: function setDoctor() {
+      this.$v.doctor.$touch();
+    },
+    setDispatch: function setDispatch(value) {
+      this.dispatch = value;
+    },
+    setIndex: function setIndex(value) {
+      this.index = (0, _index.checkValue)(value, "index");
+      this.$v.index.$touch();
+    },
+    setCountry: function setCountry(value) {
+      this.country = (0, _index.checkValue)(value, "text");
+      this.$v.country.$touch();
+    },
+    setRegion: function setRegion(value) {
+      this.region = (0, _index.checkValue)(value, "text");
+      this.$v.region.$touch();
+    },
+    setCity: function setCity(value) {
+      this.city = (0, _index.checkValue)(value, "text");
+      this.$v.city.$touch();
+    },
+    setStreet: function setStreet(value) {
+      this.street = (0, _index.checkValue)(value, "text");
+      this.$v.street.$touch();
+    },
+    setHouse: function setHouse(value) {
+      this.house = (0, _index.checkValue)(value, "house");
+      this.$v.house.$touch();
+    },
+    setDocument: function setDocument() {
+      this.$v.document.$touch();
+    },
+    setPasportSeries: function setPasportSeries(value) {
+      this.pasportSeries = (0, _index.checkValue)(value, "pasport-series");
+      this.$v.pasportSeries.$touch();
+    },
+    setPasportNumber: function setPasportNumber(value) {
+      this.pasportNumber = (0, _index.checkValue)(value, "pasport-number");
+      this.$v.pasportNumber.$touch();
+    },
+    setPasortOrganization: function setPasortOrganization(value) {
+      this.pasportOrganization = (0, _index.checkValue)(value, "text");
+      this.$v.pasportOrganization.$touch();
+    },
+    setPasortDate: function setPasortDate() {
+      this.$v.pasportDate.$touch();
     }
-  },
-  created: function created() {
-    this.lastname = (0, _index.checkValue)(this.lastname, "lastname");
   }
 };
 exports.default = _default;
@@ -11528,36 +14973,95 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("form", { staticClass: "form" }, [
-    _c("h2", { staticClass: "form__title" }, [_vm._v("Анкета")]),
-    _vm._v(" "),
-    _c(
-      "div",
-      [
-        _c("Private", {
-          attrs: {
-            validate: {
-              name: _vm.$v.name,
-              surname: _vm.$v.surname,
-              lastname: _vm.$v.lastname,
-              birth: _vm.$v.birth
-            }
-          },
-          on: {
-            "update-value-name": _vm.setName,
-            "update-value-surname": _vm.setSurname,
-            "update-value-lastname": _vm.setLastname,
-            "update-value-birth": _vm.setBirth
+  return _c(
+    "form",
+    { staticClass: "form" },
+    [
+      _c("h2", { staticClass: "form__title" }, [_vm._v("Анкета")]),
+      _vm._v(" "),
+      _c("Private", {
+        attrs: {
+          validate: {
+            name: _vm.$v.name,
+            surname: _vm.$v.surname,
+            lastname: _vm.$v.lastname,
+            birth: _vm.$v.birth,
+            phone: _vm.$v.phone,
+            gender: _vm.$v.gender,
+            clients: _vm.$v.clients,
+            doctor: _vm.$v.doctor
           }
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c("div", [_c("Addres", { attrs: { validate: {} } })], 1),
-    _vm._v(" "),
-    _c("div", [_c("Pasport", { attrs: { validate: {} } })], 1)
-  ])
+        },
+        on: {
+          "update-value-name": _vm.setName,
+          "update-value-surname": _vm.setSurname,
+          "update-value-lastname": _vm.setLastname,
+          "update-value-birth": _vm.setBirth,
+          "update-value-phone": _vm.setPhone,
+          "update-value-gender": _vm.setGender,
+          "update-value-clients": _vm.setClients,
+          "update-value-doctor": _vm.setDoctor,
+          "update-value-dispatch": _vm.setDispatch
+        }
+      }),
+      _vm._v(" "),
+      _c("Addres", {
+        attrs: {
+          validate: {
+            index: _vm.$v.index,
+            country: _vm.$v.country,
+            region: _vm.$v.region,
+            city: _vm.$v.city,
+            street: _vm.$v.street,
+            house: _vm.$v.house
+          }
+        },
+        on: {
+          "update-value-index": _vm.setIndex,
+          "update-value-country": _vm.setCountry,
+          "update-value-region": _vm.setRegion,
+          "update-value-city": _vm.setCity,
+          "update-value-street": _vm.setStreet,
+          "update-value-house": _vm.setHouse
+        }
+      }),
+      _vm._v(" "),
+      _c("Pasport", {
+        attrs: {
+          validate: {
+            document: _vm.$v.document,
+            pasportSeries: _vm.$v.pasportSeries,
+            pasportNumber: _vm.$v.pasportNumber,
+            pasportOrganization: _vm.$v.pasportOrganization,
+            pasportDate: _vm.$v.pasportDate
+          }
+        },
+        on: {
+          "update-value-document": _vm.setDocument,
+          "update-value-pasport_series": _vm.setPasportSeries,
+          "update-value-pasport_number": _vm.setPasportNumber,
+          "update-value-pasport_organization": _vm.setPasortOrganization,
+          "update-value-pasport_date": _vm.setPasortDate
+        }
+      }),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "form__submit",
+          attrs: { type: "button" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.openModal(_vm.$v)
+            }
+          }
+        },
+        [_vm._v("\n    Создать клиента\n  ")]
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -11592,22 +15096,27 @@ render._withStripped = true
       
       }
     })();
-},{"./components/Fieldsets/Private/Private.vue":"../src/components/Fieldsets/Private/Private.vue","./components/Fieldsets/Addres/Addres.vue":"../src/components/Fieldsets/Addres/Addres.vue","./components/Fieldsets/Pasport/Pasport.vue":"../src/components/Fieldsets/Pasport/Pasport.vue","./utils/index.js":"../src/utils/index.js","_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../src/index.js":[function(require,module,exports) {
+},{"./components/Fieldsets/Private/Private.vue":"../src/components/Fieldsets/Private/Private.vue","./components/Fieldsets/Addres/Addres.vue":"../src/components/Fieldsets/Addres/Addres.vue","./components/Fieldsets/Pasport/Pasport.vue":"../src/components/Fieldsets/Pasport/Pasport.vue","./utils/index.js":"../src/utils/index.js","./data/index":"../src/data/index.js","_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _vue = _interopRequireDefault(require("vue"));
 
 var _vuelidate = _interopRequireDefault(require("vuelidate"));
 
+var _vueMultiselect = _interopRequireDefault(require("vue-multiselect"));
+
 var _App = _interopRequireDefault(require("./App.vue"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Расширение Vue
-_vue.default.use(_vuelidate.default);
+_vue.default.use(_vuelidate.default); // Мультисилектор
+
+
+_vue.default.component('multiselect', _vueMultiselect.default);
 
 new _vue.default(_App.default).$mount('#app');
-},{"vue":"../node_modules/vue/dist/vue.runtime.esm.js","vuelidate":"../node_modules/vuelidate/lib/index.js","./App.vue":"../src/App.vue"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"vue":"../node_modules/vue/dist/vue.runtime.esm.js","vuelidate":"../node_modules/vuelidate/lib/index.js","vue-multiselect":"../node_modules/vue-multiselect/dist/vue-multiselect.min.js","./App.vue":"../src/App.vue"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -11635,7 +15144,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58639" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54149" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

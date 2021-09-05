@@ -1,6 +1,16 @@
 @import '../mixin';
 @import '../variables';
 .form {
+    &__label {
+        font-size: 16px;
+        &-radio {
+            display: flex;
+        }
+        &-checkbox {
+            display: flex;
+            font-size: 12px;
+        }
+    }
     max-width: 500px;
     margin: 0 auto;
     padding: 10px;
@@ -20,17 +30,57 @@
     &-group {
         padding-top: 10px;
     }
-    &-input {
+    &-input:not([type='radio']) {
         display: block;
+        width: 400px;
         padding: 10px;
         margin: 5px 0;
         border: 2px solid rgb(180, 151, 151);
         border-radius: 10px;
+        cursor: pointer;
         &--sucess {
             border: 2px solid green;
         }
     }
     &-small {
         padding-bottom: 10px;
+    }
+    &__submit {
+        padding: 10px;
+        background-color: rgb(249, 255, 164);
+        border: 2px solid rgb(255, 182, 99);
+        border-radius: 25px;
+        &:hover {
+            transform: scale(1.1);
+            background-color: rgb(248, 245, 55);
+        }
+        &:focus {
+            background-color: rgb(190, 190, 150);
+        }
+        &:active {
+            background-color: rgb(168, 168, 0);
+        }
+    }
+}
+
+.multiselect {
+    &__tag,
+    &__single {
+        padding: 5px;
+        margin-right: 5px;
+        border-radius: 15px;
+    }
+    &__content {
+        padding: 0;
+        margin: 10px 0 0 0;
+    }
+    &__element {
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        border-bottom: 2px solid #b49797;
+        &:hover {
+            color: red;
+            border-bottom: 2px solid red;
+        }
     }
 }
